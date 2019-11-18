@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <title>AR Tags & Sounds - BWSI RACECAR</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "AR Tags & Sounds";
+    var mkdocs_page_input_path = "curriculum/mod3/01_ar_sounds/ar_sounds.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../../.." class="icon icon-home"> BWSI RACECAR</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Introduction</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../intro/overview/">Course Overview</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Curriculum</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Module 0: Getting Started</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod0/01_hardware_intro/hardware_intro/">Using the Hardware</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod0/02_ros_intro/ros_intro/">Intro to Terminal & ROS</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 1: Basic Control</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/01_proportional_controller/proportional_controller/">Proportional Control</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/02_wall_follower/wall_follower/">Wall Follower</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/03_safety_controller/safety_controller/">Safety Controller</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/04_potential_fields/potential_fields/">Potential Fields Controller</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 2: Computer Vision</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod2/01_segmentation/segmentation/">Color Segmentation</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod2/02_line_follow/line_follow/">Line Following</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod2/03_feature_detect/feature_detect/">Feature Detection</a>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Module 3: Detecting Environments</span>
+    <ul class="subnav">
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">AR Tags & Sounds</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#ar-tags-and-sound">AR Tags and Sound</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#goals">Goals</a></li>
+        
+            <li><a class="toctree-l5" href="#ar-tags">AR Tags</a></li>
+        
+            <li><a class="toctree-l5" href="#using-sounds">Using Sounds</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../02_maps_bags/maps_bags/">Maps & Rosbags</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 4: Machine Learning</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod4/01_hog_svm/hog_svm_lab/">HOG SVM</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cheatsheets</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/python/">Python</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/opencv/">OpenCV</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/ros/">ROS Terminal Commands</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/ros-topics-msgs/">ROS Topics and Messages</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Setup</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Hardware</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/hardware/build/">Build</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/hardware/router/">Router</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Software</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/software/jetson/">Jetson Config</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/software/native_ros_install/native_ros_install_ref/">Native ROS Install</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">References</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../references/ros/ros_ref/">ROS</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/cartographer/cartographer_ref/">Cartographer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/localization/localization_ref/">Localization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/lidar/">Lidar</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/zed/">ZED</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/speakers/sound/">Speakers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/rosbag/rosbag_ref/">Rosbags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/docker/docker_ref/">Docker</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/collab/collab_ref/">Collaboration</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Resources</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../resources/faq/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../resources/contributors/">Contributors</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../..">BWSI RACECAR</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Module 3: Detecting Environments &raquo;</li>
+        
+      
+        
+          <li>Curriculum &raquo;</li>
+        
+      
+    
+    <li>AR Tags & Sounds</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ar-tags-and-sound">AR Tags and Sound</h1>
+<p>Today, you will be learning to change states based off of reading AR tags and using your speakers to indicate a state change. </p>
+<h3 id="goals">Goals</h3>
+<ol>
+<li>Implement a state machine</li>
+<li>Get your car to read AR tags</li>
+<li>Produce sounds when the car changes states</li>
+</ol>
+<h2 id="ar-tags">AR Tags</h2>
+<p>AR tags are essentially less complex QR codes, from which our cars can read a corresponding number for each unique tag as well as the position and orientation of the tag. </p>
+<p><img alt="arTag" src="../artagsEx.png" /></p>
+<p>While this can be useful for localization, for now we will just be using it to change states based on which AR tag it sees. To be able to do this, we have to install a ROS package that interprets AR tags: </p>
+<ul>
+<li>In order to install this library, you need to enter the following code into the command line (make sure you are outside of the racecar_ws for this): <code>sudo apt-get install ros-melodic-ar-track-alvar</code>. </li>
+<li>Next, there are several topics you need to change in a launch file to configure the wrapper to our car. 
+Navigate to the folder with all the package's launch files: <code>cd /opt/ros/melodic/share/ar_track_alvar/launch</code>. </li>
+<li>Enter: <code>sudo cp pr2_indiv_no_kinect.launch racecar_ar.launch</code>. </li>
+<li>Then, <code>sudo chmod a+rwx racecar_ar.launch</code> to change the read/write permissions. </li>
+<li>Now, use vim to edit racecar_ar.launch to modify the following topics (listed after default= in each line):</li>
+</ul>
+<p>For "cam_image_topic", change it to "/zed/zed_node/rgb/image_rect_color" </p>
+<p>For "cam_info_topic", change it to "/zed/zed_node/rgb/camera_info" </p>
+<p>For "output_frame", change it to "/base_link" </p>
+<p>It should look like this:</p>
+<p><img alt="launchFile" src="../launch.png" /></p>
+<ul>
+<li>To launch the AR node, you can type <code>roslaunch ar_track_alvar racecar_ar.launch</code>. You will have to run this whenever you want to read AR tags.</li>
+</ul>
+<p>While the ar_track_alvar node is running, whenever the car sees an AR tag with the camera, it will publish the AR tag's ID (its corresponding number) and its physical properties to <code>ar_pose_marker</code>. So, we have to write a new subscriber for this topic! The object that it will receive is of type <code>AlvarMarkers</code>. The <code>markers</code> attribute is a list of all the AR tags it sees, and the <code>id</code> attribute of each index will have the AR tag's unique number that you will need to access for this lab. For example, if you wanted the ID number of the first AR tag available and you have the callback's parameter <code>tags</code>, you could call <code>tags.markers[0].id</code>.</p>
+<p>Now, you are going to have your car change states based on what AR tag ID it sees. You can write this in your AR tag callback. There will be six commands (for six AR tags): forwards, backwards, stop, left, right, and straight. Note that the car will detect multiple AR tags at once and has to respond accordingly. For example, if it sees both forwards and left, it should make a left turn while going forwards. You won't ever have to respond to multiple speed-related tags or turn-related tags at the same time (so you don't need to worry about seeing both a forwards and backwards tag). The AR tags IDs correspond to the following commands:</p>
+<ul>
+<li>0: Forward</li>
+<li>1: Backward</li>
+<li>2: Stop</li>
+<li>3: Right</li>
+<li>4: Left</li>
+<li>5: Straight</li>
+</ul>
+<p>This time, all we're giving you in the starter code (<code>driveAr.py</code>) are the basic ROS things (publishers/subscribers, publishing, etc) and a basic framework; everything concerning the driving, reading AR tags, and setting states states is up to you. You should write everything having to do with the AR tags in the arCallback function, and set your driving speed and steering angle in the driveCallback function. Download the code <a href="https://drive.google.com/drive/folders/189Vf5-P4p2II1ifWEnZYnswWQXXD_P18?usp=sharing">here</a>.</p>
+<h2 id="using-sounds">Using Sounds</h2>
+<p>We've given you speakers for your cars, so now we will be able to play sounds! This is helpful for debugging and knowing when you've changed states, since printing can sometimes slow the car down. </p>
+<p>After you plug in the speakers, we have to make sure the car outputs to these speakers instead of the default. In a terminal that ssh'd into your car, type in <code>pactl list short sinks</code>. One entry should have a name similar to <code>alsa_output.usb-Generic_USB2.0_Device_20130100ph0-00.iec958-stereo</code>. Copy this name and type <code>pactl set-default-sink name_of_your_speaker_this_is_not_the_command</code>. Now we have to change the volume: enter <code>amixer -D pulse sset Master 60%</code>, where the percentage is the volume (please be reasonable with the volume, we will come after you if your car is too loud).</p>
+<p>In <code>driveAr.py</code>, you can publish the current state to the sound node using <code>sound_pub</code> (you must write the publish commands for this). Every time you change states, it should play a sound <strong>once</strong>.  In <code>soundNode.py</code>, there is an empty dictionary. The key will be a string with the name of the state you pass in through the publisher, and the value is a string of the path of the sound file you want to use (for example, the value for the sound file tone1 would be <code>"./pythonSounds/tone1.wav"</code>). I would recommend using left.wav and right.wav when the car turns, and different tones for the speed controls and straight.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../02_maps_bags/maps_bags/" class="btn btn-neutral float-right" title="Maps & Rosbags">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../../mod2/03_feature_detect/feature_detect/" class="btn btn-neutral" title="Feature Detection"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../../mod2/03_feature_detect/feature_detect/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../02_maps_bags/maps_bags/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+
+</body>
+</html>

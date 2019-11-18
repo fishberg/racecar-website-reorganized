@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Docker - BWSI RACECAR</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Docker";
+    var mkdocs_page_input_path = "references/docker/docker_ref.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> BWSI RACECAR</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Introduction</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../intro/overview/">Course Overview</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Curriculum</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Module 0: Getting Started</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod0/01_hardware_intro/hardware_intro/">Using the Hardware</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod0/02_ros_intro/ros_intro/">Intro to Terminal & ROS</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 1: Basic Control</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod1/01_proportional_controller/proportional_controller/">Proportional Control</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod1/02_wall_follower/wall_follower/">Wall Follower</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod1/03_safety_controller/safety_controller/">Safety Controller</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod1/04_potential_fields/potential_fields/">Potential Fields Controller</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 2: Computer Vision</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod2/01_segmentation/segmentation/">Color Segmentation</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod2/02_line_follow/line_follow/">Line Following</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod2/03_feature_detect/feature_detect/">Feature Detection</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 3: Detecting Environments</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod3/01_ar_sounds/ar_sounds/">AR Tags & Sounds</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod3/02_maps_bags/maps_bags/">Maps & Rosbags</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 4: Machine Learning</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod4/01_hog_svm/hog_svm_lab/">HOG SVM</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cheatsheets</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../cheatsheets/python/">Python</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../cheatsheets/opencv/">OpenCV</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../cheatsheets/ros/">ROS Terminal Commands</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../cheatsheets/ros-topics-msgs/">ROS Topics and Messages</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Setup</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Hardware</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../setup/hardware/build/">Build</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../setup/hardware/router/">Router</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Software</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../setup/software/jetson/">Jetson Config</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../setup/software/native_ros_install/native_ros_install_ref/">Native ROS Install</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">References</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../ros/ros_ref/">ROS</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../cartographer/cartographer_ref/">Cartographer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../localization/localization_ref/">Localization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lidar/">Lidar</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../zed/">ZED</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../speakers/sound/">Speakers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../rosbag/rosbag_ref/">Rosbags</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Docker</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#setup">Setup</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#step-1-install-docker">Step 1: Install Docker</a></li>
+        
+            <li><a class="toctree-l4" href="#step-2-create-a-mount-folder">Step 2: Create a Mount Folder</a></li>
+        
+            <li><a class="toctree-l4" href="#step-3-install-the-racecar-simulator">Step 3: Install the Racecar Simulator</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#using-the-docker-image">Using the Docker Image</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#running-the-virtual-machine">Running the Virtual Machine</a></li>
+        
+            <li><a class="toctree-l4" href="#using-the-image">Using the Image</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../collab/collab_ref/">Collaboration</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Resources</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../resources/faq/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../resources/contributors/">Contributors</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">BWSI RACECAR</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>References &raquo;</li>
+        
+      
+    
+    <li>Docker</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><center>
+<h1> Docker</h1>
+</center></p>
+<p>Docker runs a mini virtual machine whose GUI (graphical user interface) can be viewed in a browser or VNC client. The point of Docker in this class is to get ROS onto non-Linux machines, so <font color="AA0000">if you have something like Ubuntu or Arch-Linux, see <a href="http://bwsi-racecar.com/references/native_ros_install/native_ros_install_ref/">these</a> native ROS installation instructions instead</font>.</p>
+<p>For those of you with non-Linux machines, the "fishberg/racecar" <a href=https://en.wikipedia.org/wiki/System_image> image </a> already has an installation of ROS as well as a basic simulator for running code on virtual racecars.</p>
+<p>Unfortunately, a lot can go wrong with setting up the docker image. Be sure to check the troubleshooting sections for any errors that make pop up.</p>
+<p><hr/>
+<!-- -------------DOCKER INSTALLATION INSTRUCTIONS------------- --></p>
+<h2 id="setup">Setup</h2>
+<h3 id="step-1-install-docker">Step 1: Install Docker</h3>
+<p>Based on your OS, follow the linked installation instructions below.</p>
+<ul>
+<li><a href="https://docs.docker.com/toolbox/toolbox_install_windows/">Windows</a></li>
+<li><a href="https://docs.docker.com/docker-for-mac/install/">MacOS</a> (You will have to make an account)</li>
+<li><a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/">Ubuntu</a> (If you really want Docker anyways)</li>
+<li><a href="https://docs.docker.com/install/linux/docker-ce/debian/">Debian</a></li>
+<li><a href="https://docs.docker.com/install/linux/docker-ce/fedora/">Fedora</a></li>
+</ul>
+<h3 id="step-2-create-a-mount-folder">Step 2: Create a Mount Folder</h3>
+<p>Create a folder to connect your Docker image to:</p>
+<pre><code class="sh"># Windows (using Powershell)
+    mkdir C:\Users\YOUR_USER_NAME\mount
+    mkdir C:\Users\YOUR_USER_NAME\mount\racecar_ws
+
+# MacOS
+    mkdir -p ~/mount/racecar_ws
+
+# GNU/Linux
+    mkdir -p ~/mount/racecar_ws
+</code></pre>
+
+<details>
+<summary>What is a mounting?</summary>
+Being a "light" virtual machine, Docker machines do not by default write to any permanent memory on your computer, so without mounting, your Docker machine will always revert to the original "fishberg/racecar" image every time you restart Docker (<i>thus not saving any code you wrote on it!</i>).<br>
+Mounting by contrast allows Docker to access and modify all the files in a mount folder on your host machine. We will use "~/mount" as the mount folder.
+</details>
+
+<p><br></p>
+<h3 id="step-3-install-the-racecar-simulator">Step 3: Install the Racecar Simulator</h3>
+<p>Make a <code>src</code> folder in your <code>racecar_ws</code>:</p>
+<pre><code class="sh"># Windows (using Powershell)
+    mkdir C:\Users\YOUR_USER_NAME\mount\racecar_ws\src
+
+# MacOS/GNU/Linux
+    mkdir -p ~/mount/racecar_ws/src
+
+</code></pre>
+
+<p>Clone the racecar code:</p>
+<pre><code class="sh">cd ~/mount/racecar_ws/src
+git clone https://github.com/mit-racecar/racecar_simulator.git
+</code></pre>
+
+<p>Make the catkin space:</p>
+<pre><code class="sh">cd ~/mount/racecar_ws 
+catkin_make
+source devel/setup.bash
+</code></pre>
+
+<details>
+<summary>What is <code>catkin_make</code>?</summary>
+It basically looks at the files in the "src" folder automatically generates and compiles stuff into the "devel" and "build" folders. For more details, Google it if you wish, but also, don't worry about it too much since it's not critical for programming the racecars.
+</details>
+
+<p><br></p>
+<p><hr/>
+<!-- -------------DOCKER USAGE INSTRUCTIONS------------- --></p>
+<h2 id="using-the-docker-image">Using the Docker Image</h2>
+<hr/>
+
+<!-- RUNNING INSTRUCTIONS -->
+
+<h3 id="running-the-virtual-machine">Running the Virtual Machine</h3>
+<p>Start the generic docker image by running:</p>
+<pre><code># On Windows (run this either in the Docker Toolbox terminal or Powershell)
+docker run -ti --net=host -v /c/Users/&lt;username&gt;/mount/racecar_ws:/racecar_ws fishberg/racecar
+
+# On MacOS (make sure the Docker application is running!)
+sudo docker run -tip 6080:6080 -v ~/mount:/mnt fishberg/racecar
+
+# On GNU/Linux
+sudo docker run -ti --net=host -v ~/mount:/mnt fishberg/racecar
+</code></pre>
+<p>The first time you run this command you will need to wait a little while for the image to download.
+Future runs should be instantaneous and won't require an internet connection.
+The image is currently ~2.25GB (ROS is big).</p>
+<p><strong>If are using a specific car</strong> (for seeing the car's camera output or ssh'ing), you can add your car's number onto the end. For example, for Mac you would run</p>
+<pre><code class="sh">sudo docker run -tip 6080:6080 -v ~/mount:/mnt fishberg/racecar &lt;YOUR_CAR_NUMBER&gt;
+</code></pre>
+
+<p>The car number is the last part of the car's IP address (the IP should be of the form 192.168.1.&#60;YOUR_CAR_NUMBER&#62;).</p>
+<!-- RUNNING TROUBLESHOOTING-->
+
+<details>
+<summary><b><font color="AA0000">Running Troubleshooting</font></b></summary>
+<ul>
+<li>
+Error something along the lines of "[] is not a launch file nor a package..."
+  <ul>
+  <li>Remake the catkin space (see <a href=insert_link>step 3</a>); make sure you are in the racecar_ws. It may throw an error about <code>cmake</code>, but just try it again. If you then get a similar but different error...</li>
+  <li>Try recloning the code (see <a href=insert_link>step 3</a>) and <code>catkin_make</code> again.</li>
+  <li> Ubuntu: you might need to install some extra packages. Run<br>
+
+<pre><code class="sh">apt-get install -y \
+    ros-melodic-tf2-geometry-msgs \
+    ros-melodic-ackermann-msgs \
+    ros-melodic-joy \
+    ros-melodic-map-server \
+    build-essential
+</code></pre>
+
+  </li>
+  </ul>
+</li>
+
+<li>
+Windows: try running one docker image for building spaces, and one for running launch files. In one Powershell, run
+
+
+<pre><code class="sh">docker run -ti --net=host -v /c/Users/YOUR_USERANME/mount:/mnt fishberg/racecar
+</code></pre>
+
+In "racecar_ws",<br>
+
+
+<pre><code class="sh">catkin_make
+catkin_make #not a typo; do it twice
+source devel/setup.bash
+</code></pre>
+
+In a different Powershell, run <br>
+
+<pre><code class="sh">docker run -ti --net=host -v /c/Users/YOUR_USERNAME/mount/racecar_ws:/racecar_ws/src fishberg/racecar
+</code></pre>
+
+In <b>this</b> docker image, you can run any roslaunch commands you need to.
+</li>
+
+
+<li>
+Mac error: “Error response from daemon: Bad response from Docker engine.”
+   <ul><li>Docker isn't running, start the application</li></ul>
+</li>
+
+<li>
+Windows error: "...A connection attempt failed because the connected party did not properly respond after a period of time, ..."
+   <ul><li>Try rerunning the docker command in another Powershell window</li></ul>
+</li>
+
+<li>
+If an instructor deems it necessary, you may also try re-building the "fishberg/racecar" image from scratch.<br>
+To build the image from scratch, run:<br>
+
+
+<pre><code class="sh">git clone https://github.com/fishberg/racecar-docker.git   
+cd racecar-docker
+sudo docker build -t racecar
+</code></pre>
+
+Then run with:
+
+<pre><code class="sh">sudo docker run -ti --net=host -v ~/mount:/mnt racecar
+</code></pre>
+
+</li>
+</ul>
+</details>
+
+<p><br></p>
+<!-- USAGE INSTRUCTIONS -->
+
+<h3 id="using-the-image">Using the Image</h3>
+<p>When you start up the virtual machine, you will be presented with a new bash shell in the folder <code>racecar_ws</code>.
+This shell will have ROS installed (e.g. try running <code>roscore</code>).
+It also has the programs <code>screen</code> and <code>tmux</code> installed.
+These programs allow you to run many shells from within the same window.</p>
+<p>In addition to the terminal interface, you can interact with the image visually through either your browser or through VNC.
+This allows you to use programs like RViz.</p>
+<p>To use the image in the browser, navigate to <a href="http://192.168.99.100:6080/vnc.html">http://192.168.99.100:6080/vnc.html</a> (Windows) or <a href="http://localhost:6080/vnc.html">http://localhost:6080/vnc.html</a> (Mac). Hit the "Connect" button and you're in!</p>
+<p>The visual interface has two buttons that launch a terminal and RViz respectively.
+By default, clicking on the terminal button when a terminal is already open minimizes that window.
+To open multiple terminals, type <kbd>CTRL</kbd> and then click on the terminal icon.</p>
+<p>Be sure to check the troubleshooting section if it doesn't work.</p>
+<details>
+<summary><b>Running the Racecar Simulator</b></summary>
+
+To get started with the simulator, first run the following in any shell:
+
+<pre><code class="sh">roslaunch racecar_simulator simulate.launch
+</code></pre>
+
+Then open RViz.
+You should see a blue car on a black and white background (a map) and some colorful dots (simulated lidar).
+If you click the green 2D Pose Estimate arrow on the top you can change the position of the car.
+Alternatively use a joystick to drive the car as described below.
+</details>
+
+<details>
+<summary><b>Using a Joystick</b></summary>
+
+Unfortunately, we can currently only get a joystick to work on Linux and Windows machines due to Mac's different USB system. To use a joystick in the image (e.g. to use with the simulator),
+you need to forward inputs from that USB device into docker.
+Most joysticks map to "/dev/input/js0" by default, so you can add that device with the flag "--device=/dev/input/js0". For example, for Linux you can run
+
+<pre><code class="sh">sudo docker run -ti --net=host --device=/dev/input/js0 -v ~/mount:/mnt fishberg/racecar &lt;YOUR_CAR_NUMBER&gt;
+</code></pre>
+
+</details>
+
+<!-- USAGE TROUBLESHOOTING -->
+
+<details>
+<summary><b><font color="AA0000">Usage Troubleshooting</font></b></summary>
+<ul>
+<li>If the browser link doesn't work, use the provided link after you run the docker image in your terminal (it should be in the paragraph that appears after running the image). You can also try replacing the IP in the address with the results of typing <code>hostname -I</code> in the image's terminal.</li>
+<li>If a red banner appear at the top of the noVNC client saying "Failed to connect to server", close your broswer and try re-running the docker image.</code>
+<li>RViz: if your RViz isn't setup correctly (ex. you don't see the map or LIDAR scans), make sure the "Displays" option is checked under "Panels". Under the "Global Settings" drop-down, set the topic to "map"; under "Map", set the topic to "/map"; and under "LaserScans", set the size to 0.1. If there is no LaserScans, Map, or RobotModel drop-down, click on "Add" at the bottom of the left panel, and select all of them.</li>
+</ul>
+</details>
+
+<p><br></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../collab/collab_ref/" class="btn btn-neutral float-right" title="Collaboration">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../rosbag/rosbag_ref/" class="btn btn-neutral" title="Rosbags"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../rosbag/rosbag_ref/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../collab/collab_ref/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

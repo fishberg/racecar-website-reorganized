@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <title>Color Segmentation - BWSI RACECAR</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Color Segmentation";
+    var mkdocs_page_input_path = "curriculum/mod2/01_segmentation/segmentation.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../../.." class="icon icon-home"> BWSI RACECAR</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Introduction</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../intro/overview/">Course Overview</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Curriculum</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Module 0: Getting Started</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod0/01_hardware_intro/hardware_intro/">Using the Hardware</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod0/02_ros_intro/ros_intro/">Intro to Terminal & ROS</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 1: Basic Control</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/01_proportional_controller/proportional_controller/">Proportional Control</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/02_wall_follower/wall_follower/">Wall Follower</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/03_safety_controller/safety_controller/">Safety Controller</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/04_potential_fields/potential_fields/">Potential Fields Controller</a>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Module 2: Computer Vision</span>
+    <ul class="subnav">
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Color Segmentation</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#color-segmentation-and-opencv">Color Segmentation and openCV</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#goals">Goals:</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l4"><a href="#part-0-setup">Part 0: Setup</a></li>
+    
+
+    <li class="toctree-l4"><a href="#part-1-correctly-identify-color-filters-as-well-as-hue-value-and-saturation">Part 1: Correctly Identify Color Filters as well as Hue, Value, and Saturation</a></li>
+    
+
+    <li class="toctree-l4"><a href="#part-2-detecting-objects-using-color-segmentation">Part 2: Detecting Objects Using Color Segmentation</a></li>
+    
+
+    <li class="toctree-l4"><a href="#part-3-drivestop-with-cones">Part 3: Drive/Stop with Cones</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../02_line_follow/line_follow/">Line Following</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../03_feature_detect/feature_detect/">Feature Detection</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 3: Detecting Environments</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod3/01_ar_sounds/ar_sounds/">AR Tags & Sounds</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod3/02_maps_bags/maps_bags/">Maps & Rosbags</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 4: Machine Learning</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod4/01_hog_svm/hog_svm_lab/">HOG SVM</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cheatsheets</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/python/">Python</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/opencv/">OpenCV</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/ros/">ROS Terminal Commands</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/ros-topics-msgs/">ROS Topics and Messages</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Setup</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Hardware</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/hardware/build/">Build</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/hardware/router/">Router</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Software</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/software/jetson/">Jetson Config</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/software/native_ros_install/native_ros_install_ref/">Native ROS Install</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">References</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../references/ros/ros_ref/">ROS</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/cartographer/cartographer_ref/">Cartographer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/localization/localization_ref/">Localization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/lidar/">Lidar</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/zed/">ZED</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/speakers/sound/">Speakers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/rosbag/rosbag_ref/">Rosbags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/docker/docker_ref/">Docker</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/collab/collab_ref/">Collaboration</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Resources</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../resources/faq/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../resources/contributors/">Contributors</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../..">BWSI RACECAR</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Module 2: Computer Vision &raquo;</li>
+        
+      
+        
+          <li>Curriculum &raquo;</li>
+        
+      
+    
+    <li>Color Segmentation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="color-segmentation-and-opencv">Color Segmentation and openCV</h2>
+<p>A color space is an organization of colors typically used to encode an image. The most common color space that most people may have heard of is the RGB color space. Others include the CMYK and YIQ models, but a common color space for robotics is the HSV color space. </p>
+<p>HSV stands for <strong>H</strong>ue, <strong>S</strong>aturation, and <strong>V</strong>alue. Saturation is the intensity of the color. Hue is which one of the standard "colors" this particular color most resembles (we count starting from red to yellow, green, cyan, blue, and end with magenta). Value is the brightness of the color, where 0 is completely black and 100 is no black.</p>
+<h3 id="goals"><strong>Goals:</strong></h3>
+<ol>
+<li>Accurately guess what HSV filter is being used</li>
+<li>Determine the threshold values for detecting a green flag and a cone</li>
+<li>Code your racecar to stop when it sees an orange cone at a desired distance away</li>
+</ol>
+<h2 id="part-0-setup">Part 0: Setup</h2>
+<p>You can download the files you need from this <a href="https://drive.google.com/drive/folders/1sSCEJ9reKdC7XVm5K5HXhXXgpeiNO7mK?usp=sharing">link</a>. You will be working mainly with <em>slider_colorRecognition.py</em>, <em>challenge.py</em>, and <em>driveNode.py</em>.</p>
+<p>If you are not a Linux user, you will need to have openCV version 4 installed onto your laptop. To check which version you have/if you have a version all, go into terminal and type</p>
+<pre><code class="sh">    python
+    import cv2
+    cv2.__version__
+</code></pre>
+
+<p>If you have the wrong version, first uninstall opencv-python by typing <code>pip uninstall opencv-python</code>. To install the correct version, type <code>pip install opencv-python==4.1.0.25</code>.</p>
+<p>You will also need to split up into two teams within your group for parts 1 and 2; when picking these sub-teams, make sure one person in each team has a working laptop camera. If no one in your team has working/good cameras, talk to your TA to see if there are extra webcameras you could borrow.</p>
+<p>Copy the files over for this lab and put newZed.py, driveNode.py, and color_segmentation.py into the scripts folder inside racecar_ws/src <strong>in your robot</strong>.</p>
+<h2 id="part-1-correctly-identify-color-filters-as-well-as-hue-value-and-saturation">Part 1: Correctly Identify Color Filters as well as Hue, Value, and Saturation</h2>
+<p>We'll be working with your laptop only for this part of the lab. Run <em>challenge.py</em>, which will apply a random filter to this image:
+<img alt="Rainbow" src="../resources/rainbow.jpg" /></p>
+<p><strong>Note:</strong> If you get an assertion error / error -215, the image pathing is wrong! Make sure challenge.py is in the same directory as your resources folder since the code calls for "resources/rainbow.jpg"</p>
+<p>Once challenge completely executes, you can press 'z' to randomly select from components of RGB and HSV: red, blue, green; hue, saturation, value. The program will modify the image to only show the values of the component that was picked. Work with your team to figure out which image is showing which component, then click the dropdown and compare. If you got any wrong, discuss with your team and call over a TA to help clarify any questions.</p>
+<details>
+<summary>Answers:</summary>
+<br>
+
+![Red](resources/red.jpg)
+
+![Green](resources/green.jpg)
+
+![Blue](resources/blue.jpg)
+
+![Saturation](resources/saturation.jpg)
+
+![Hue](resources/hue.jpg)
+
+![Value](resources/value.jpg)
+
+</details>
+
+<h2 id="part-2-detecting-objects-using-color-segmentation">Part 2: Detecting Objects Using Color Segmentation</h2>
+<p>Color segmentation is an algorithm used to find specific objects. We first specify the upper and lower bounds for the components of whatever color space we are using ie. hue, saturation, value for HSV and so on. The algorithm then takes in an image and applies a filter to it that "erases" any pixel that does not fall within the specified range, allowing the camera to focus on specific objects.</p>
+<p><strong>Note:</strong> When you run slider_colorSegmentation, you must add a source flag. You do this by typing in the command to run the program normally in your terminal (python slider_colorRecognition.py) then typing -s and a source number (0 for your laptop's camera and 1 for a usb camera). For example, a person using their laptop's camera would go into their terminal and type</p>
+<pre><code class="sh">   python slider_colorSegmentation.py -s 0
+</code></pre>
+
+<ul>
+<li>Look at your objects and make note of which component (hue, saturation, value) will be most useful for you</li>
+<li>Run slider_colorSegmentation.py. This gives you three separate windows, one containing the camera output, one with the filter, and one with the sliders. In order to exit the program, press and hold the escape key. If you are missing the third slider window, try looking at your open windows and selecting it.</li>
+<li>You will see two sliders for each component of the color space. One is the lower bound and the other is the upper bound. The area in between is the area that the algorithm will target; everything else will be excluded.</li>
+<li>In the first window, a green bounding box will be drawn around the largest object within the bounds you have specified.</li>
+<li>Figure out what the correct bounds are for each object and take notes! Try to get the most accurate filter (in other words, only the specific object you want shows up on-screen). Write down your cone hsv ranges!</li>
+</ul>
+<p><strong>Note:</strong> Are HSV values always constant? What things could affect what a camera sees? Make sure you think about these things and how they could affect what the robot sees.</p>
+<p>These are the values that worked for us: </p>
+<ul>
+<li>low_range  = np.array( [ 0, 220, 161] ) </li>
+<li>high_range = np.array( [28, 255, 255] )</li>
+</ul>
+<p>Compare, do yours look similar or different? Do yours work better?</p>
+<h2 id="part-3-drivestop-with-cones">Part 3: Drive/Stop with Cones</h2>
+<p>Join back up with your bigger team since you are working with the car now!</p>
+<p>In this part of the lab, we will be programming the car to stop when it sees an orange cone (Look at your teammate's clothing to check if they're wearing these colors!). We will first check the HSV values of the color we'll be using and take note of these values, then mess with <em>driveNode.py</em> to make the car stop when it sees the orange cone at a certain distance away.</p>
+<ul>
+<li>Open up <em>slider_colorSegmentation.py</em> and identify the upper and lower bounds of the HSV space necessary to identify the color of the cone you are working with. Once you have the numbers for the bounds, go into <em>color_segmentation.py</em> and add these values in the marked area. This ensures that the filter is applied to the images traveling through ROS.</li>
+</ul>
+<p>Now, we will be working with <em>driveNode.py</em>, which is where the car will take in the filtered image and publish drive commands. In <em>color_segmentation.py</em>, there is a function called cd_color_segmentation(), which takes in an image, applies a filter, and finds the biggest viable object. It then draws a box around the object and returns the box's coordinates, in the form of a nested tuple
+ <code>( (xL,yL), (xR,yR) )</code>
+. xL and yL are the x,y coordinates of the upper left corner of the box while xR and yR are the x,y coordinates of the bottom right corner of the box.</p>
+<p>You will be working with two functions: size_calc() and drive().</p>
+<ul>
+<li>
+<p><strong>size_calc() :</strong> this function will primarily modify the class's self.box_size parameter. Using the information you have been given, find the total size/area of the box given by cd_color_segmentation(). </p>
+</li>
+<li>
+<p><strong>drive() :</strong> this function is called after size_calc() and when the racecar is not in autonomous mode. drive() tells the robot how to move and what to do when it sees the cone. Your task will be to have the robot stop <strong>only when it is 1 meter or less away from the cone</strong> and drive forward otherwise. You don't have to worry about publishing in this section since everything is published in the main loop (see <em>main()</em>), you just have to update the car's speed.</p>
+</li>
+</ul>
+<p>To test your code, have teleop, safety, and zed running. Then, in the scripts folder run driveNode.py like normal(type python driveNode.py). This should run your new driving node.</p>
+<p><strong>Challenge:</strong> Once you have completed all the parts, try making the car stop when the cone is a certain distance away <strong>and</strong> in the center of the robot's view!</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../02_line_follow/line_follow/" class="btn btn-neutral float-right" title="Line Following">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../../mod1/04_potential_fields/potential_fields/" class="btn btn-neutral" title="Potential Fields Controller"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../../mod1/04_potential_fields/potential_fields/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../02_line_follow/line_follow/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <title>Intro to Terminal & ROS - BWSI RACECAR</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Intro to Terminal & ROS";
+    var mkdocs_page_input_path = "curriculum/mod0/02_ros_intro/ros_intro.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../../.." class="icon icon-home"> BWSI RACECAR</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Introduction</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../intro/overview/">Course Overview</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Curriculum</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <span class="caption-text">Module 0: Getting Started</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../01_hardware_intro/hardware_intro/">Using the Hardware</a>
+                </li>
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Intro to Terminal & ROS</a>
+    <ul class="subnav">
+            
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 1: Basic Control</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/01_proportional_controller/proportional_controller/">Proportional Control</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/02_wall_follower/wall_follower/">Wall Follower</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/03_safety_controller/safety_controller/">Safety Controller</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/04_potential_fields/potential_fields/">Potential Fields Controller</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 2: Computer Vision</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod2/01_segmentation/segmentation/">Color Segmentation</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod2/02_line_follow/line_follow/">Line Following</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod2/03_feature_detect/feature_detect/">Feature Detection</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 3: Detecting Environments</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod3/01_ar_sounds/ar_sounds/">AR Tags & Sounds</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod3/02_maps_bags/maps_bags/">Maps & Rosbags</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 4: Machine Learning</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod4/01_hog_svm/hog_svm_lab/">HOG SVM</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cheatsheets</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/python/">Python</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/opencv/">OpenCV</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/ros/">ROS Terminal Commands</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/ros-topics-msgs/">ROS Topics and Messages</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Setup</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Hardware</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/hardware/build/">Build</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/hardware/router/">Router</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Software</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/software/jetson/">Jetson Config</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/software/native_ros_install/native_ros_install_ref/">Native ROS Install</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">References</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../references/ros/ros_ref/">ROS</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/cartographer/cartographer_ref/">Cartographer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/localization/localization_ref/">Localization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/lidar/">Lidar</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/zed/">ZED</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/speakers/sound/">Speakers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/rosbag/rosbag_ref/">Rosbags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/docker/docker_ref/">Docker</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/collab/collab_ref/">Collaboration</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Resources</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../resources/faq/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../resources/contributors/">Contributors</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../..">BWSI RACECAR</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Module 0: Getting Started &raquo;</li>
+        
+      
+        
+          <li>Curriculum &raquo;</li>
+        
+      
+    
+    <li>Intro to Terminal & ROS</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><center><h1>
+Lab: Intro to Terminal &amp; ROS
+</h1></center>
+<font color=#A0A0A0 size=2>
+<em>Personal note: We realize some of you may find this a bit slow/pedantic, but please know that we aren’t doing this just to annoy you. Knowledge being what it is, it is often necessary to learn a language before trying to write with it. And if you do enjoy the language itself, that’s cool beans too!</em>
+</font></p>
+<p><hr/><!-------------------------------------------->
+<h2>
+Manipulating Files Using the Terminal
+</h2></p>
+<ol type="1"><li><b>
+Make sure you have an installation of ROS.
+</b><ul><li>
+If you installed ROS on your (presumably Ubuntu) computer or if you have a monitor plugged in to your car, you are good to go.
+</li><li>
+Otherwise, run Docker (because the fishberg/racecar <a href=https://en.wikipedia.org/wiki/System_image> image </a> has an installation of ROS) and mount to a folder on your host machine. (Good luck! Hehe.)
+</li></ul></li>
+
+<li><b>
+Use terminal commands to navigate to a folder that holds programs.
+</b><br>
+The terminal command for navigating to a folder is <code><a href="https://en.wikipedia.org/wiki/Cd_(command)">cd</a> &#60;path_to_folder&#62;/</code>.<br>
+<ul><li>
+If using a racecar, navigate to the "~/racecar_ws/src/scripts/" folder.
+</li><li>
+If using your own computer, navigate to wherever makes sense.
+</li><li>
+If using Docker on your computer, navigate to your mount folder (in either your host machine terminal or the Docker machine terminal).<br>
+</li></ul>
+<details><summary>Some Common Folders, For Reference</summary>
+<ul><li>
+"/" is the folder that holds all other folders
+</li><li>
+"~/" is the home folder
+</li><li>
+"./" is the current folder
+</li><li>
+"../" is the folder that holds the current folder
+</li><li>
+"~/racecar_ws/src/scripts/" is a good folder for store programs on the racecars
+</li></ul></details>
+</li>
+
+<li><b>
+Create a new folder for this lab's programs, and name it "example_ROS_files".
+</b><br>
+The terminal command is <code><a href="https://en.wikipedia.org/wiki/Mkdir">mkdir</a> &#60;new_folder_name&#62;</code>.
+</li></ul></li>
+
+<li><b>
+Download the ROS lab starter files from <a href=https://drive.google.com/drive/folders/1WypmNAGqlyrXJbgG3Q5NoyoC7V5afSzM?usp=sharing> here on Google Drive </a> and move them to the folder you just created.
+</b><br>
+The terminal command for moving files is <br><code><a href="https://en.wikipedia.org/wiki/Mv">mv</a> &#60;folder_path_to_copy_from&#62;/&#60;file_name&#62; &#60;folder_path_to_copy_into&#62;/&#60;new_file_name&#62;</code>.<br>
+<ul><li>
+If you're directly on the car, make sure that your car's router is plugged into an active ethernet port, or just connect the car to Wifi network.
+</li><li>
+If you're using Docker, you'll want to do this on your host machine. If you've mounted correctly, the files should also appear in the Docker machine's mount folder.
+</li></ul>
+</li>
+
+<hr/><!-------------------------------------------->
+<h2>
+Creating a ROS Network from Scratch
+</h2>
+
+<li><b>
+In a terminal that has ROS, run <code>roscore</code>.
+</b><br>
+In short, roscore is a sort of master node looks at all the other nodes’ publishers and subscribers and connects them appropriately. See the "Connecting Nodes" section of the <a href=http://bwsi-racecar.com/ros-reference/ROS_reference/#connecting_nodes>ROS Reference Page</a>.
+</li>
+
+<li><b>
+Take a look at myBasicNode1.py and try to predict what it does.
+</b><br>
+(i.e. open it with some text editor)<br>
+If you still aren’t sure what’s going on after about 5 min, just move on to the next step.
+</li>
+
+<li><b>
+In another window/tab of terminal, run myBasicNode1.py.
+</b><br>
+The terminal command is <code>&#60;path_to_file&#62;/&#60;python_file_name&#62;</code>.<br>
+This works because we have <code>#!/usr/bin/env python</code> at the top of our python files. Otherwise we would need to use <code>python &#60;path_to_file&#62;/&#60;python_file_name&#62;</code> to run our file as a python program.
+<details><summary>
+Does your code not run at all (no Python errors or anything)? Has your permission been denied? Well then folks, it’s debugging time!
+</summary>
+<ul><li>
+What’s probably going on is you don’t have the permissions set to let your programs be executable. We can check this by trying <code>ls -la</code> while in your program’s folder. If your terminal spits back "-rw-r--r--" preceding your filename ("myBasicNode1.py"), that is indeed what's happening.
+</li><li>
+Add e<font color="00AA00"><b>x</b></font>ecutable permission by running <code>chmod +x &#60file_name&#62</code>.
+</li><li> Hopefully you'll see something different if you run <code>ls -la</code> again.
+</li></ul>
+</details>
+</li>
+
+<li><b>
+Try <code>rosnode list</code>, then <code>rostopic list</code>, then <code>rostopic echo blah</code>, then <code>rostopic echo blah/data</code>. Then take a look at "myBasicNode1.py" again.
+</b><br>
+<ul><li>
+Just use one more window/tab; you don’t need to run these all at the same time.
+</li><li>
+Where exactly in "myBasicNode1.py" do you see some of the names that <code>rosnode list</code> and <code>rostopic list</code> spat out?
+</li><li>
+Take note of the small difference between "blah" and "blah/data". It will become more important as we begin to deal with messages that have many attributes.
+</li><li>
+Now if there’s a detail about the node that still doesn’t make sense, please ask your squad members or your TA’s what’s the situation here because the rest of the lab builds upon this.
+</li><li>
+See the <a href=http://bwsi-racecar.com/cheatsheets/ros/> ROS Command Line Cheatsheet </a> for more fun and informative ROS commands.
+</li></ul>
+</li>
+
+<li><b>
+Now take a look at myNode1.py and fill it in to make it work like myBasicNode1.py.
+</b><br>
+In case you haven’t heard of classes before, we created a class in "myNode1.py". Used this way, the class structure simply helps organization. We will not expect you to write classes from scratch, but that said, classes are good to know if you plan on working with object-oriented programming long-term.</font><br>
+</li>
+
+<li><b>
+Now fill out "myNode2.py" so that it subscribes to the "blah" topic and prints out the messages it receives. Run it at the same time as "myNode1.py".
+</b><br>
+See the "Subscribers" section of the <a href=http://bwsi-racecar.com/ros-reference/ROS_reference/#subscribers>ROS Reference Page</a> for a review of subscribers and callback functions if needed.
+</li>
+
+<li><b>
+Say you called your messages "msg". Try printing "msg" versus "msg.data" to tell the difference between the two.
+</b><br>
+You should see a similar difference as to when you tried echoing "blah" vs "blah/data". 
+</li>
+
+<li><b>
+While the nodes are running, try <code>rqt_graph</code>.
+</b><br>
+Is this the graph you anticipate? If not, please ask your squad members or your TA’s what’s going on here because this is decently important to understanding ROS.
+</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../mod1/01_proportional_controller/proportional_controller/" class="btn btn-neutral float-right" title="Proportional Control">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../01_hardware_intro/hardware_intro/" class="btn btn-neutral" title="Using the Hardware"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../01_hardware_intro/hardware_intro/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../../mod1/01_proportional_controller/proportional_controller/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+
+</body>
+</html>

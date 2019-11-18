@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Cartographer - BWSI RACECAR</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Cartographer";
+    var mkdocs_page_input_path = "references/cartographer/cartographer_ref.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> BWSI RACECAR</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Introduction</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../intro/overview/">Course Overview</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Curriculum</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Module 0: Getting Started</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod0/01_hardware_intro/hardware_intro/">Using the Hardware</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod0/02_ros_intro/ros_intro/">Intro to Terminal & ROS</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 1: Basic Control</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod1/01_proportional_controller/proportional_controller/">Proportional Control</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod1/02_wall_follower/wall_follower/">Wall Follower</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod1/03_safety_controller/safety_controller/">Safety Controller</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod1/04_potential_fields/potential_fields/">Potential Fields Controller</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 2: Computer Vision</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod2/01_segmentation/segmentation/">Color Segmentation</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod2/02_line_follow/line_follow/">Line Following</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod2/03_feature_detect/feature_detect/">Feature Detection</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 3: Detecting Environments</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod3/01_ar_sounds/ar_sounds/">AR Tags & Sounds</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod3/02_maps_bags/maps_bags/">Maps & Rosbags</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 4: Machine Learning</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod4/01_hog_svm/hog_svm_lab/">HOG SVM</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cheatsheets</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../cheatsheets/python/">Python</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../cheatsheets/opencv/">OpenCV</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../cheatsheets/ros/">ROS Terminal Commands</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../cheatsheets/ros-topics-msgs/">ROS Topics and Messages</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Setup</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Hardware</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../setup/hardware/build/">Build</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../setup/hardware/router/">Router</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Software</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../setup/software/jetson/">Jetson Config</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../setup/software/native_ros_install/native_ros_install_ref/">Native ROS Install</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">References</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../ros/ros_ref/">ROS</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Cartographer</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#making-a-map-from-live-data">Making a Map from Live Data</a></li>
+    
+
+    <li class="toctree-l3"><a href="#making-a-map-from-a-rosbag">Making a Map from a Rosbag</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#recording-the-rosbag">Recording the Rosbag.</a></li>
+        
+            <li><a class="toctree-l4" href="#creating-the-map">Creating the Map</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../localization/localization_ref/">Localization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lidar/">Lidar</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../zed/">ZED</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../speakers/sound/">Speakers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../rosbag/rosbag_ref/">Rosbags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../docker/docker_ref/">Docker</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../collab/collab_ref/">Collaboration</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Resources</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../resources/faq/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../resources/contributors/">Contributors</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">BWSI RACECAR</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>References &raquo;</li>
+        
+      
+    
+    <li>Cartographer</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><center><h1>Google Cartographer</h1></center>
+<hr/></p>
+<!-- --------------------INSTALLING CARTOGRAPHER-------------------- -->
+
+<details>
+<summary> <h2 id="installation-instructions"> Installation Instructions </h2> </summary>
+
+<h3> New Installation Instructions </h3>
+<ol type="1">
+<li>Download this zip file <a href="https://drive.google.com/file/d/1SurM5VlkNsGCOTyt9Qm-RvwhOG2SR-ac/">here on Google Drive</a> onto your computer and extract its contents. Then use <code>scp</code> to dump it onto the car into the car's Downloads:
+
+<pre><code class="bash">  scp -r &lt;path_to_my_computers_downloads_folder&gt;/racecar_cartographer_installation racecar@192.168.1.&lt;car_number&gt;:~/Downloads/
+</code></pre>
+
+</li>
+<li>Make sure your car's router is plugged into wifi.</li>
+<li><code>ssh</code> into the car <code>cd</code> to the "racecar_cartographer_installation" folder</li>
+<li>Run the first shell script. (This replaces "Install Google Cartographer"):
+
+<pre><code class="bash">  bash cartographer_install.sh
+</code></pre>
+
+Warning: this will take a long time ~ roughly 20-30 minutes.</li>
+<li>Run the second shell script. (This replaces "Install MIT Racecar stuff"):
+
+<pre><code class="bash">  bash racecar_cartographer_install.sh
+</code></pre>
+
+</li>
+</ol>
+
+<h3> Old Installation Instructions </h3>
+<h4> Install Google Cartographer </h4>
+Based on official Google Cartographer [instructions](https://google-cartographer-ros.readthedocs.io/en/latest/compilation.html):
+
+<pre><code class="bash"># Update apt-get (good housekeeping)
+sudo apt-get update
+# Install ninja
+sudo apt-get install ninja-build python-wstool python-rosdep
+
+# Make a workspace for cartographer
+mkdir ~/cartographer_ws
+cd ~/cartographer_ws
+wstool init src
+
+# Fetch cartographer_ros
+wstool merge -t src https://raw.githubusercontent.com/googlecartographer/cartographer_ros/master/cartographer_ros.rosinstall
+wstool update -t src
+
+# Install proto3
+src/cartographer/scripts/install_proto3.sh
+
+# Remove deb dependencies and reinitialize them
+sudo rm /etc/ros/rosdep/sources.list.d/20-default.list
+sudo rosdep init
+rosdep update
+# Must run from within &quot;cartographer_ws&quot; folder:
+rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
+
+# Build and install. Must run from within &quot;cartographer_ws&quot; folder:
+catkin_make_isolated --install --use-ninja
+</code></pre>
+
+
+Then add these lines to the end of the car's "~/.bashrc" file if they're not already there:
+
+<pre><code class="bash">source ~/racecar_ws/.catkin_ws/devel/setup.bash
+source ~/cartographer_ws/install_isolated/setup.bash
+</code></pre>
+
+<!--Recommendation for future work. Put these bash customization lines in ~/racecar_ws/.dotfiles/_racecars instead.-->
+
+<h3> Install MIT Racecar stuff </h3>
+
+Clone this repo into your "racecar_ws" (not your "cartographer_ws"!) and <code>catkin_make</code>:
+
+<pre><code class="bash">cd ~/racecar_ws/.catkin_ws/src
+git clone https://github.com/mit-rss/cartographer_config.git
+cd ~/racecar_ws/.catkin_ws
+catkin_make
+source devel/setup.bash
+</code></pre>
+
+Then download this zip file <a href="https://drive.google.com/file/d/1a71YjMlLNQapo6Cs3l7ezS-TKVErK0Gs/">here on Google Drive</a> onto your computer and extract its contents. Then use <code>scp</code> to dump it onto the car into someplace logical (like the Downloads folder):
+
+<pre><code class="bash">  scp -r &lt;path_to_my_computers_downloads_folder&gt;/racecar_cartographer_files racecar@192.168.1.&lt;car_number&gt;:~/Downloads/
+</code></pre>
+
+Then on the racecar, <code>cd</code> into the resulting "racecar_cartographer_files" folder, and copy the files over into the following paths within "cartographer_ws":
+
+<pre><code class="bash">cp ./racecar_config_files/racecar_2d.lua ~/cartographer_ws/src/cartographer_ros/cartographer_ros/configuration_files/racecar_2d.lua
+cp ./racecar_config_files/racecar_2d_localization.lua ~/cartographer_ws/src/cartographer_ros/cartographer_ros/configuration_files/racecar_2d_localization.lua
+cp ./racecar_launch_files/racecar_2d.launch ~/cartographer_ws/src/cartographer_ros/cartographer_ros/launch/racecar_2d.launch
+cp ./racecar_launch_files/offline_racecar_2d.launch ~/cartographer_ws/src/cartographer_ros/cartographer_ros/launch/offline_racecar_2d.launch
+cp ./racecar_launch_files/demo_racecar_2d_localization.launch ~/cartographer_ws/src/cartographer_ros/cartographer_ros/launch/demo_racecar_2d_localization.launch
+cp -r racecar_description ~/cartographer_ws/src/
+</code></pre>
+
+Finally <code>catkin_make</code> again to install these files:
+
+<pre><code class="bash">cd ~/cartographer_ws
+catkin_make_isolated --install --use-ninja
+</code></pre>
+
+</details>
+
+<!-- --------------------USING CARTOGRAPHER-------------------- -->
+
+<p><hr/>
+<h2> Using Cartographer with ROS </h2>
+<em>Note: These instructions assume you have installed Google Cartographer according to the above installation instructions.</em>
+<hr/></p>
+<h3 id="making-a-map-from-live-data">Making a Map from Live Data</h3>
+<ol>
+<li>If you haven't already, make a folder to store maps. We recommend making it in the home directory <code>mkdir ~/mapfiles</code>.</li>
+<li>Run <code>teleop</code>.</li>
+<li>
+<p>In another car's terminal, run <code>source ~/cartographer_ws/devel_isolated/setup.bash</code>, then <code>roslaunch cartographer_ros racecar_2d.launch</code> to start making the map.<br></p>
+</li>
+<li>
+<p>If you forget to source the setup file, you will get an error like: "No such file or directory: /home/racecar/cartographer_ws/install_isolated/share/racecar_description/urdf/racecar.xacro..."</p>
+</li>
+<li>
+<p>If you get another error along the lines of "RLException: [racecar_2d.launch] is neither a launch file in package [cartographer_ros] nor is [cartographer_ros] a launch file name", try <code>cd</code>-ing into "~/cartographer_ws" and running <code>catkin_make_isolated --install --use-ninja</code>.</p>
+</li>
+<li>
+<p>Run <code>rviz</code>, and add the "\map" topic if it's not there already. </p>
+</li>
+<li>Do this in Docker (make sure you ran it with the car number argument), or on your Ubuntu machine (with ROS installed), or on the car itself (if you have a monitor).</li>
+<li>If you are making a map with a rosbag, be warned that you will not see any map until you start playing the rosbag.</li>
+<li>To add a topic, click the "Add" button.<br>
+<img alt="" src="../img/rviz_cartographer1_small.png" /><br>
+Then go to the, "By Topic" tab, and add the topic you are interested in.<br>
+<img alt="" src="../img/rviz_cartographer2_small.png" /><br></li>
+<li>Also, rviz can be finicky at times. If nothing appears even after running teleop or playing the rosbag, try changing the "Fixed Frame" to "map". Then check and uncheck the the checkboxes for the topics you are interested in. If that didn't work, try re-running Rviz. Check that you are running the programs you need to run.</li>
+<li>Drive the car around the area you wish to map out. Try to drive in closed loops when possible.</li>
+<li>When you are satisfied with your map, keep cartographer running. To save the map, run <code>rosrun map_server map_saver -f ~/mapfiles/&lt;your_map_name&gt;</code></li>
+<li>Now you may kill cartographer.</li>
+</ol>
+<hr/>
+
+<h3 id="making-a-map-from-a-rosbag">Making a Map from a Rosbag</h3>
+<p><font color="A0A0A0"><em>Rosbags are nice in that they allow you to isolate data collection from data processing.</em></font></p>
+<h4 id="recording-the-rosbag">Recording the Rosbag.</h4>
+<ol>
+<li>If you haven't already, make a folder to store rosbags. We recommend making it in the home directory <code>mkdir ~/bagfiles</code>.</li>
+<li>Place the car in a good starting position.</li>
+<li>In a car's terminal, run <code>teleop</code>.</li>
+<li><code>cd</code> into your rosbag folder and run <code>rosbag record -a -o &lt;your_rosbag_name&gt;</code> to start recording data on all the topics.</li>
+<li>Drive the car around the area you wish to map out. Try to drive in closed loops when possible.</li>
+<li>When you are satisfied with your data collection (try to shoot for a minute or two of good data), kill the rosbag to stop recording. It may take a few seconds to stop, so let it die in peace.</li>
+<li>(optional) The bagfile naming system is kinda gross. Use an <code>mv</code> command to rename your bag file to something pretty. If you don't know what we mean by that, <a href="https://www.google.com/">Google</a> (and by that I mean <a href="https://duckduckgo.com/">DuckDuckGo</a> or <a href="https://www.ecosia.org/">Ecosia</a>) "renaming files in terminal".</li>
+</ol>
+<h4 id="creating-the-map">Creating the Map</h4>
+<p><u>To get a .pgm file and a .yaml file</u> (<em>this is what our particle filter uses</em>):</p>
+<ul>
+<li>Follow the same instructions as for running off of live data, but:<ul>
+<li>in step 2, instead of running <code>teleop</code>, run <code>roscore</code></li>
+<li>in step 6, instead of driving the car around, run </li>
+</ul>
+</li>
+</ul>
+<pre><code class="bash">  rosbag play ~/bagfiles/&lt;your_rosbag_name&gt;.bag
+</code></pre>
+
+<ul>
+<li>Save the map when the rosbag stops playing. (You'll know it is done when it prints "Done." in the terminal).</li>
+<li>Note: Remember to kill teleop! If you don't kill teleop, cartographer will see the rosbag data and current data at the same time! Plus, since the <code>-a</code> flag passed to <code>rosbag record</code> means record everything, playing the rosbag plays drive command data!</li>
+<li>Possible improvements for future TA's and students to explore: bag files take up a lot of memory; figure out which topics Cartographer uses and pass them as specific arguments to <code>rosbag record</code>. See <a href="http://wiki.ros.org/rosbag/Commandline">rosbag documentation</a> for details.</li>
+</ul>
+<details><summary><u>Alternatively, to get a .pbstream file</u> (<i>not recommended; this is usually for further use within Google Cartographer</i>):</summary>
+1. Run <code>roslaunch cartographer_ros offline_racecar_2d.launch bag_filenames:=${HOME}/bagfiles/&lt;your_rosbag_name&gt;.bag</code><br>
+&ensp; Warning: this will pull up an rviz window. If you're ssh-ed in, then whoops.<br>
+2. Wait for the bag to finish playing, then watch the terminal and wait until it's done "optimizing".
+</details>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../localization/localization_ref/" class="btn btn-neutral float-right" title="Localization">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../ros/ros_ref/" class="btn btn-neutral" title="ROS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../ros/ros_ref/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../localization/localization_ref/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

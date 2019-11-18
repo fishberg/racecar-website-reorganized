@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>ROS Topics and Messages - BWSI RACECAR</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ROS Topics and Messages";
+    var mkdocs_page_input_path = "cheatsheets/ros-topics-msgs.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> BWSI RACECAR</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Introduction</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../intro/overview/">Course Overview</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Curriculum</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Module 0: Getting Started</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../curriculum/mod0/01_hardware_intro/hardware_intro/">Using the Hardware</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../curriculum/mod0/02_ros_intro/ros_intro/">Intro to Terminal & ROS</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 1: Basic Control</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../curriculum/mod1/01_proportional_controller/proportional_controller/">Proportional Control</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../curriculum/mod1/02_wall_follower/wall_follower/">Wall Follower</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../curriculum/mod1/03_safety_controller/safety_controller/">Safety Controller</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../curriculum/mod1/04_potential_fields/potential_fields/">Potential Fields Controller</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 2: Computer Vision</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../curriculum/mod2/01_segmentation/segmentation/">Color Segmentation</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../curriculum/mod2/02_line_follow/line_follow/">Line Following</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../curriculum/mod2/03_feature_detect/feature_detect/">Feature Detection</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 3: Detecting Environments</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../curriculum/mod3/01_ar_sounds/ar_sounds/">AR Tags & Sounds</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../curriculum/mod3/02_maps_bags/maps_bags/">Maps & Rosbags</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 4: Machine Learning</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../curriculum/mod4/01_hog_svm/hog_svm_lab/">HOG SVM</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cheatsheets</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../python/">Python</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../opencv/">OpenCV</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ros/">ROS Terminal Commands</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">ROS Topics and Messages</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#ros-helpful-topic-and-message-type-cheatsheet">ROS Helpful Topic and Message Type Cheatsheet</a></li>
+    
+
+    <li class="toctree-l3"><a href="#topics">Topics</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#sensor-topics">Sensor Topics</a></li>
+        
+            <li><a class="toctree-l4" href="#camera-topics">Camera Topics</a></li>
+        
+            <li><a class="toctree-l4" href="#external-usage-topics">External Usage Topics</a></li>
+        
+            <li><a class="toctree-l4" href="#safety-controller-topics">Safety Controller Topics</a></li>
+        
+            <li><a class="toctree-l4" href="#ar-topics">AR Topics</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#messages">Messages</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#sensor-messages">Sensor Messages</a></li>
+        
+            <li><a class="toctree-l4" href="#ackermann-messages">Ackermann Messages</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Setup</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Hardware</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../setup/hardware/build/">Build</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../setup/hardware/router/">Router</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Software</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../setup/software/jetson/">Jetson Config</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../setup/software/native_ros_install/native_ros_install_ref/">Native ROS Install</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">References</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../references/ros/ros_ref/">ROS</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../references/cartographer/cartographer_ref/">Cartographer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../references/localization/localization_ref/">Localization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../references/lidar/">Lidar</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../references/zed/">ZED</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../references/speakers/sound/">Speakers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../references/rosbag/rosbag_ref/">Rosbags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../references/docker/docker_ref/">Docker</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../references/collab/collab_ref/">Collaboration</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Resources</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../resources/faq/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../resources/contributors/">Contributors</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">BWSI RACECAR</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Cheatsheets &raquo;</li>
+        
+      
+    
+    <li>ROS Topics and Messages</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ros-helpful-topic-and-message-type-cheatsheet">ROS Helpful Topic and Message Type Cheatsheet</h1>
+<h1 id="topics">Topics</h1>
+<p>Ex. <code>topic_name</code> (<code>message_type_name</code>) - Description of topic</p>
+<h2 id="sensor-topics">Sensor Topics</h2>
+<ul>
+<li><code>/scan</code> (<code>sensor_msgs/LaserScan</code>) - Topic that the Hokuyo LIDAR sends</li>
+<li><code>/scan_processed</code> - Topic that the processed Velodyne LIDAR sends</li>
+<li><code>/imu/data</code> (<code>sensor_msgs/Imu</code>) - Topic that the IMU sends</li>
+<li><code>/tf</code> (<code>tf/tfMessage</code>) - Topic that shows the various transformed coordinate systems</li>
+<li><code>/odom</code> (<code>geometry_msgs/Point</code>) - Topic that shows the Odometry data</li>
+</ul>
+<h2 id="camera-topics">Camera Topics</h2>
+<ul>
+<li><code>/zed/rgb/image_rect_color</code> (<code>sensor_msgs/Image</code>) - Topic that gives the rectified image of the camera (in full color)</li>
+<li><code>/zed/[right or left]/image_raw_color</code> (<code>sensor_msgs/Image</code>) - Topic that gives the raw image of either of the right or left cameras (in full color)</li>
+<li><code>/zed/depth/depth_registered</code> (<code>sensor_msgs/Image</code>) - Topic that gives the depth data from the camera (black and white)</li>
+</ul>
+<h2 id="external-usage-topics">External Usage Topics</h2>
+<ul>
+<li><code>/vesc/high_level/ackermann_cmd_mux/input/nav_0</code> (<code>ackermann_msgs/AckermannDriveStamped</code>) - What to write to in order to run the car (without bypassing the safety controller)</li>
+</ul>
+<h2 id="safety-controller-topics">Safety Controller Topics</h2>
+<ul>
+<li><code>/ackermann_cmd_input</code> (<code>ackermann_msgs/AckermannDriveStamped</code>) - The input about to be published to run the RACECAR</li>
+<li><code>/ackermann_cmd</code> (<code>ackermann_msgs/AckermannDriveStamped</code>) - The output to actually drive the car (without anymore checking involved)</li>
+</ul>
+<h2 id="ar-topics">AR Topics</h2>
+<ul>
+<li><code>/visualization_marker</code> (<code>visualization_msgs/Marker</code>) - </li>
+<li><code>/ar_pose_marker</code> (<code>ar_track_alvar_msgs/AlvarMarkers</code>) - Gives an array of the AlvarMarkers detected</li>
+</ul>
+<h1 id="messages">Messages</h1>
+<p>Ex. <code>from message_folder import message_type</code> - What used for
+    * <code>important_sub_topic</code> - what represents</p>
+<h2 id="sensor-messages">Sensor Messages</h2>
+<ul>
+<li><code>from sensor_msgs.msg import LaserScan</code> - The information coming from the LIDAR<ul>
+<li><code>LaserScan.ranges</code> - An array of 1081 distances coming from the laser scan</li>
+</ul>
+</li>
+<li><code>from sensor_msgs.msg import Image</code> - The image published by the camera </li>
+</ul>
+<h2 id="ackermann-messages">Ackermann Messages</h2>
+<ul>
+<li><code>from ackermann_msgs.msg import AckermannDriveStamped</code> - The drive command that the Ackermann command mux takes in</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../setup/hardware/build/" class="btn btn-neutral float-right" title="Build">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ros/" class="btn btn-neutral" title="ROS Terminal Commands"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../ros/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../setup/hardware/build/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

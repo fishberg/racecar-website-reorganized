@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <title>Using the Hardware - BWSI RACECAR</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Using the Hardware";
+    var mkdocs_page_input_path = "curriculum/mod0/01_hardware_intro/hardware_intro.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../../.." class="icon icon-home"> BWSI RACECAR</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Introduction</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../intro/overview/">Course Overview</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Curriculum</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <span class="caption-text">Module 0: Getting Started</span>
+    <ul class="subnav">
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Using the Hardware</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#turning-on-the-car">Turning on the Car</a></li>
+    
+
+    <li class="toctree-l4"><a href="#sshing">SSH'ing</a></li>
+    
+
+    <li class="toctree-l4"><a href="#scping">SCP'ing</a></li>
+    
+
+    <li class="toctree-l4"><a href="#controlling-the-car">Controlling the car</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#common-errors">Common Errors</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l4"><a href="#intro-to-autonomous-driving">Intro to autonomous driving</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../02_ros_intro/ros_intro/">Intro to Terminal & ROS</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 1: Basic Control</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/01_proportional_controller/proportional_controller/">Proportional Control</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/02_wall_follower/wall_follower/">Wall Follower</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/03_safety_controller/safety_controller/">Safety Controller</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/04_potential_fields/potential_fields/">Potential Fields Controller</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 2: Computer Vision</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod2/01_segmentation/segmentation/">Color Segmentation</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod2/02_line_follow/line_follow/">Line Following</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod2/03_feature_detect/feature_detect/">Feature Detection</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 3: Detecting Environments</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod3/01_ar_sounds/ar_sounds/">AR Tags & Sounds</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod3/02_maps_bags/maps_bags/">Maps & Rosbags</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 4: Machine Learning</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod4/01_hog_svm/hog_svm_lab/">HOG SVM</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cheatsheets</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/python/">Python</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/opencv/">OpenCV</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/ros/">ROS Terminal Commands</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/ros-topics-msgs/">ROS Topics and Messages</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Setup</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Hardware</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/hardware/build/">Build</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/hardware/router/">Router</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Software</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/software/jetson/">Jetson Config</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/software/native_ros_install/native_ros_install_ref/">Native ROS Install</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">References</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../references/ros/ros_ref/">ROS</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/cartographer/cartographer_ref/">Cartographer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/localization/localization_ref/">Localization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/lidar/">Lidar</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/zed/">ZED</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/speakers/sound/">Speakers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/rosbag/rosbag_ref/">Rosbags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/docker/docker_ref/">Docker</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/collab/collab_ref/">Collaboration</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Resources</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../resources/faq/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../resources/contributors/">Contributors</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../..">BWSI RACECAR</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Module 0: Getting Started &raquo;</li>
+        
+      
+        
+          <li>Curriculum &raquo;</li>
+        
+      
+    
+    <li>Using the Hardware</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><center>
+<h1>Lab: RACECAR Hardware Intro</h1>
+Welcome to the RACECAR<br />
+(<strong>R</strong>apid <strong>A</strong>utonomous <strong>C</strong>omplex-<strong>E</strong>nvironment <strong>C</strong>ompeting <strong>A</strong>ckermann-steering <strong>R</strong>obot)!
+</center>
+<hr/></p>
+<h2 id="turning-on-the-car">Turning on the Car</h2>
+<ol>
+<li>
+<p><strong>Use Blocko Friendo</strong><br />
+Set the car on a block on your table, such that the wheels <font color="AA0000"><strong>aren't touching the table</strong></font>. Unless you're actually testing your code on the ground, leave the car on this block.
+<center>
+<img alt="" src="../img/mondo_block.jpg" />
+</center></p>
+</li>
+<li>
+<p><strong>Plug in the Electronics Battery</strong><br />
+Unplug the battery charger.
+<center>
+<img alt="" src="../img/xt_battery.png" />
+</center>
+If you have an XT Power battery, there will be two identical wires; you only need to plug one into the battery. On these batteries, <em>quickly</em> press the battery's power button. If you hold it, it will change the voltage setting.
+<center>
+<img alt="" src="../../Resources/CarEPower.jpg" />
+</center>
+If you have an Energizer battery, there will be a wire marked blue and a wire marked green, which you must plug into the corresponding ports).<br />
+<font color="A0A0A0">Troubleshooting Tip: if something isn't receivng power, check to make sure that the blue and green ports inside the Energizer aren't broken apart. Each should have a center pin.</font></p>
+</li>
+<li>
+<p><strong>Boot it Up</strong><br />
+Turn on the car using the power button on the TX2. The lights should turn green.
+<center>
+<img alt="" src="../../Resources/CarPower.jpg" />
+</center></p>
+</li>
+<li>
+<p><strong>Plug in the Traxxas Battery</strong><br />
+This battery can supply ample amperage to the VESC (Vedder Electronic Speed Controller) which controls the drive and steering motor.
+<center>
+<img alt="" src="../../Resources/CarTPower.jpg" />
+</center>
+<font color="A0A0A0">Troubleshooting Tip: you'll know the VESC is receiving power if the steering servo motor tries to keep the front wheels steered forwards. Also, please don't apply too much force when trying to turn the front wheels to test this; it doesn't take much force to tell.</font></p>
+</li>
+</ol>
+<h2 id="sshing">SSH'ing</h2>
+<p><strong>The <code>ssh</code> command allows you to use a remote computer's (i.e. a racecar's) terminal on your host machine.</strong></p>
+<p>To ssh, make sure you are connected to the same wifi network as your car.<br />
+Then run in your terminal:
+<code>ssh racecar@192.168.1.&lt;YOUR_CAR_NUMBER&gt;</code>.<br />
+The RACECAR's password is racecar@mit.</p>
+<p>Make sure everyone on your team is able to do this before moving on! </p>
+<h2 id="scping">SCP'ing</h2>
+<p><strong>The <code>scp</code> command allows you to copy files back and forth from a remote machine.</strong>  </p>
+<p>From local to remote (i.e. upload to car):<br />
+<code>scp &lt;LOCAL_FILE_PATH&gt; &lt;REMOTE_USERNAME&gt;@&lt;IP&gt;:&lt;REMOTE_FILE_PATH&gt;</code><br />
+From remote to local (i.e. download from car):<br />
+<code>scp &lt;REMOTE_USERNAME&gt;@&lt;IP&gt;:&lt;REMOTE_FILE_PATH&gt; &lt;LOCAL_FILE_PATH&gt;</code> </p>
+<p>For example, if you wanted to move a file on your Mac desktop called "drive.py" to the "racecar_ws" folder of car 101, you would run:<br />
+<code>scp ~/Desktop/drive.py racecar@192.168.1.101:/home/racecar/racecar_ws/</code> </p>
+<p><font color="A0A0A0">Troubleshooting Tip: <strong>You should run <code>scp</code> outside of the racecar</strong> (i.e. not in an ssh'd terminal). Otherwise, you'd be flipped around and need your computer's hostname and IP.</font></p>
+<h2 id="controlling-the-car">Controlling the car</h2>
+<p>Once you've successfully ssh'd in, type <code>teleop</code>. This will allow us to actually drive the car. If there is an error about it being unable to connect to the joystick, end the program (ctrl-C) and try again. If there is still an error, as a TA for help. </p>
+<p>Now you can drive the car using the controller! The cars have a Dead Man's Switch for safety; this means that to use the controller to drive, you have to hold down LB at the same time. If the Mode light is turned on, press Mode. The controller must also be in the X mode (this is changed by a switch in between the bumpers). Try driving around! The left joystick controls speed, and the right joystick turns.</p>
+<p>Keep in mind that these are expensive (i.e. several kilodollars!) piece of equipment; always be aware of your/the car's surroudings when driving, and communicate with other teams that are also driving their cars to avoid damaging them.</p>
+<h4 id="common-errors">Common Errors</h4>
+<p>If your car doesn't drive with the controller...</p>
+<ul>
+<li>Check <code>teleop</code> for any errors. There should be a "force feedback" error for the joystick, but everything else should run fine.</li>
+<li>If there is a VESC error, quit <code>teleop</code>, wait a minute or two and try again. This often happens if you try to run teleop immediately after turning on the car or pluggin in the Traxxas battery, since it takes a minute for the VESC to boot up.</li>
+<li>If you get individual errors for the Hokuyo or IMU, check that these are properly plugged in.<ul>
+<li><table>
+    <tr>
+        <td><img alt="" src="../img/imu_small.png" /></td>
+        <td>The IMU should be plugged into the USB hub, and its micro USB port should not be ripped off. It should light a blue LED when it's powered on.</td>
+    </tr>
+</table></li>
+<li><table>
+    <tr>
+        <td><img alt="" src="../img/hokuyo_small.png" /></td>
+        <td>For the Hokuyo, check that its Ethernet cable is plugged into the USB and that it's power cable is plugged into the power harness. You'll know the Hokuyo is receiving power if you can hear it whirring.</td>
+    </tr>
+</table></li>
+</ul>
+</li>
+<li>If you get multiple errors for the VESC and IMU, there might be a problem with your USB hub. Try power-cycling the car (turning it off and on). If that doesn't fix it, check that the USB hub is connected to the TX2 board and is getting power from the electronics battery through the power harness.<br />
+Alternatively, you may also get a similar whopping load of errors if more than one person tries running <code>teleop</code> at the same time. Power cycle the car and try it again with only one person ssh-ed in (or just use the monitor and keyboard).</li>
+<li>If your controller was on D and then you switched it to X, try power-cycling the car.</li>
+</ul>
+<p>When you think you have a good feel of the car, move on to the next section.</p>
+<h2 id="intro-to-autonomous-driving">Intro to autonomous driving</h2>
+<p>First, let's just program the racecar to drive forwards on its own. Open <code>controller.py</code>. Change the car's velocity in the function <code>drive_callback</code>. You can change the speed with the variable <code>self.cmd.drive.speed</code>. Start off with small values like 0.5 so you don't accidently crash!</p>
+<p>When you want to run your code on the car, press the right bumper on the controller after <code>teleop</code> and your code are running.</p>
+<p>Next, try having the car drive in a circle. You can change the wheel angle with the variable <code>self.cmd.drive.steering_angle</code> (the car uses radians). Explore the range of values that might work best for your car (speed, turning angle, etc).</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../02_ros_intro/ros_intro/" class="btn btn-neutral float-right" title="Intro to Terminal & ROS">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../../../intro/overview/" class="btn btn-neutral" title="Course Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../../../intro/overview/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../02_ros_intro/ros_intro/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+
+</body>
+</html>

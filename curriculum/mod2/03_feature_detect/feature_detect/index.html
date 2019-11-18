@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <title>Feature Detection - BWSI RACECAR</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Feature Detection";
+    var mkdocs_page_input_path = "curriculum/mod2/03_feature_detect/feature_detect.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../../.." class="icon icon-home"> BWSI RACECAR</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Introduction</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../intro/overview/">Course Overview</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Curriculum</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Module 0: Getting Started</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod0/01_hardware_intro/hardware_intro/">Using the Hardware</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod0/02_ros_intro/ros_intro/">Intro to Terminal & ROS</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 1: Basic Control</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/01_proportional_controller/proportional_controller/">Proportional Control</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/02_wall_follower/wall_follower/">Wall Follower</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/03_safety_controller/safety_controller/">Safety Controller</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/04_potential_fields/potential_fields/">Potential Fields Controller</a>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Module 2: Computer Vision</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../01_segmentation/segmentation/">Color Segmentation</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../02_line_follow/line_follow/">Line Following</a>
+                </li>
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Feature Detection</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#midweek-challenge-cone-and-sign-parking">Midweek Challenge: Cone and Sign Parking</a></li>
+    
+
+    <li class="toctree-l4"><a href="#sign-detection">Sign Detection</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#changing-turnrectstarterpy-and-drivenodepy-to-work-with-ros">Changing turnRectStarter.py and driveNode.py to work with ROS</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l4"><a href="#parking">Parking</a></li>
+    
+
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 3: Detecting Environments</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod3/01_ar_sounds/ar_sounds/">AR Tags & Sounds</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod3/02_maps_bags/maps_bags/">Maps & Rosbags</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 4: Machine Learning</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod4/01_hog_svm/hog_svm_lab/">HOG SVM</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cheatsheets</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/python/">Python</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/opencv/">OpenCV</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/ros/">ROS Terminal Commands</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/ros-topics-msgs/">ROS Topics and Messages</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Setup</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Hardware</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/hardware/build/">Build</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/hardware/router/">Router</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Software</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/software/jetson/">Jetson Config</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/software/native_ros_install/native_ros_install_ref/">Native ROS Install</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">References</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../references/ros/ros_ref/">ROS</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/cartographer/cartographer_ref/">Cartographer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/localization/localization_ref/">Localization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/lidar/">Lidar</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/zed/">ZED</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/speakers/sound/">Speakers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/rosbag/rosbag_ref/">Rosbags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/docker/docker_ref/">Docker</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/collab/collab_ref/">Collaboration</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Resources</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../resources/faq/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../resources/contributors/">Contributors</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../..">BWSI RACECAR</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Module 2: Computer Vision &raquo;</li>
+        
+      
+        
+          <li>Curriculum &raquo;</li>
+        
+      
+    
+    <li>Feature Detection</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="midweek-challenge-cone-and-sign-parking">Midweek Challenge: Cone and Sign Parking</h2>
+<p>For this week's first challenge, we'll simulate your car driving down a street, turning into a parking lot, and parking in a designated spot. Your car will have to do two things:</p>
+<ol>
+<li>Read the direction of the sign and turn in that direction</li>
+<li>Spot the orange cone and park in front of it</li>
+</ol>
+<p>These two things can be developed independently of each other; our recommendation is that half of your team tackles the first task and the other tackles the second task. You can then combine the code into one file. Writing the sign recognition code will require reading some documentation, writing some openCV, and heavy on python, while the parking will deal with an extension of the drive-stop lab and state machines.</p>
+<h2 id="sign-detection">Sign Detection</h2>
+<p>For sign detection, we will be using feature detection in the form of the ORB (Scale-Invariant Feature Transform) algorithm and color detection. This code is only designed to run on your laptop; once you can verify that it works on your laptop you can keep moving forward.</p>
+<p>The feature detection part of the program is the ORB section; this code uses FAST to detect keypoints within the template image and compares those to the keypoints of the camera image, drawing a box around the sub-image with the most matches.</p>
+<p>This is good and all <em>but</em> a right one-way sign does not have that many different keypoints compared to a left one-way sign, which means that ORB will not be able to tell the difference between the two signs. This is where you will have to implement an algorithm that can distinguish between the two now that you have narrowed the image to just the sign using ORB (crop the camera image to just the box around the sign). Here are two approaches:</p>
+<ul>
+<li>
+<p>Template matching: Takes a template image and "slides" it over a given image, comparing the pixel values at every point. It then remembers the point with the highest match value. There are plenty of online tutorials that can show you how to write this type of algorithm.</p>
+</li>
+<li>
+<p>Pixel counting: A right one-way sign will have more white pixels in the right-most side of the sign that a left one-way sign and vice-versa. Since you have narrowed down the camera image to just the sign using ORB, you can iterate through the pixels of the sign and count the number of white pixels. There are a couple ways to do this, including converting your target image to grayscale and using the cv2.countNonZero() function.</p>
+</li>
+</ul>
+<p>In order for template matching to work, the sign needs to be approached at the same angle as your template image <em>and</em> traditionally has to be the same size (how can this be worked around?) while pixel counting is less consistent and could be thrown off more easily. Its up to you to implement an algorithm that fits your situation.</p>
+<p>Here is an example run of turnRectStarter:</p>
+<pre><code class="bash">python turnRectStarter.py -i ./images/oneway.jpg -l &quot;One-Way-Sign&quot; -s 0
+</code></pre>
+
+<p>-i tells the program what image to get
+-l is a lowercase l that tells what to label the detected object
+-s tells them the source of camera, just like slider_colorSegmentation.py</p>
+<p>Here is what our orb_det returns when seeing a right way sign:
+<img alt="Right-way" src="../rway.png" /></p>
+<p>Here is what our orb_det returns when seeing a left way sign:
+<img alt="Left-way" src="../lway.png" /></p>
+<h3 id="changing-turnrectstarterpy-and-drivenodepy-to-work-with-ros">Changing turnRectStarter.py and driveNode.py to work with ROS</h3>
+<p>The images from the Zed camera and openCV images sadly do not work too well with each other. That means we will have to change some stuff so that it works with ROS. </p>
+<ul>
+<li>
+<p>First, we have to get rid of the cv2 source code inside <em>turnRectStarter.py</em> (the code that takes in images from the camera). We can delete any cv2.VideoCapture() function within the code. You can also delete any part that has the cam.read() function (including the loop it is in) and set "frame" to be a passed-in image (that means you need to alter the function to take in an extra parameter "source")</p>
+</li>
+<li>
+<p>Then, you can delete any cv2.imshow(), cam.release, cv2.destroyAllWindows(), and cv2.waitKey(), since ssh'ing does not allow these windows to pop up. You will need to delete the while loop and need to pop out all the code within the loop (ie change the indentation to be in-line with the outside code)</p>
+</li>
+<li>
+<p>Change any "continue" to a pass and comment out the parts with ap (such as ap.argparse, ap.add_argument, etc.) Then, delete the if <strong>main</strong>: part of the lab (bottom two lines)</p>
+</li>
+<li>
+<p>Go to the line that has label and remove the if/else statement. Then, remove the cv2.putText() line since the robot really doesn't need that</p>
+</li>
+<li>
+<p>Finally, make a variable for your two bounding boxes, which the function will now return. Find the two instances of cv2.rectangle(), which will key you in to what the bounding box coordinates are and where they are stored, and set your bounding box variable equal to these coordinates</p>
+</li>
+</ul>
+<p>We will now look at driveNode.py to see how the images are passed in. Go into your <strong>init</strong> function and find the self.camera_data variable. That variable holds the camera data from the Zed camera. Looking further down at the callback function, you can see that cd_color_segmentation takes in self.camera_data.cv_image. This is the Zed image that has been molded to work with openCV, so that is what you will be passing into orb_det() as your source image. Notice that orb_det takes in an image apart from the source(the one way sign image in this case) so make sure you pass in the location of the one-way image into the orb_det function.</p>
+<p>If you get confused, the implementation of the orb_det function should be very similar to the implementation of the cd_color_segmentation function except for the extra "comparison" image. </p>
+<h2 id="parking">Parking</h2>
+<p>Your task is to have the car drive up to the cone and park in front of it! You will need to build upon the code in driveNode.py since parking is just an extension of drive-stop. As you write your code, make sure you <strong>START SMALL and SIMPLE</strong> as a sanity check. If your simple code works, you can build up to more complicated things.</p>
+<p>You should try to get the cone to sit between the car's wheels and have the car stop within a meter of the cone; penalties will be given for failing to satisfy these conditions.</p>
+<p>Once you finish this, think about how your robot will respond to the sign detection. Your teammates are working on reading the sign and returning a direction; what will your robot do once that direction has been sent back? Develop the system necessary to make your robot turn in the desired direction consistently.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../mod3/01_ar_sounds/ar_sounds/" class="btn btn-neutral float-right" title="AR Tags & Sounds">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../02_line_follow/line_follow/" class="btn btn-neutral" title="Line Following"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../02_line_follow/line_follow/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../../mod3/01_ar_sounds/ar_sounds/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+
+</body>
+</html>

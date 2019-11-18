@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <title>HOG SVM - BWSI RACECAR</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "HOG SVM";
+    var mkdocs_page_input_path = "curriculum/mod4/01_hog_svm/hog_svm_lab.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../../.." class="icon icon-home"> BWSI RACECAR</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Introduction</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../intro/overview/">Course Overview</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Curriculum</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Module 0: Getting Started</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod0/01_hardware_intro/hardware_intro/">Using the Hardware</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod0/02_ros_intro/ros_intro/">Intro to Terminal & ROS</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 1: Basic Control</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/01_proportional_controller/proportional_controller/">Proportional Control</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/02_wall_follower/wall_follower/">Wall Follower</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/03_safety_controller/safety_controller/">Safety Controller</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod1/04_potential_fields/potential_fields/">Potential Fields Controller</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 2: Computer Vision</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod2/01_segmentation/segmentation/">Color Segmentation</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod2/02_line_follow/line_follow/">Line Following</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod2/03_feature_detect/feature_detect/">Feature Detection</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 3: Detecting Environments</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod3/01_ar_sounds/ar_sounds/">AR Tags & Sounds</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../mod3/02_maps_bags/maps_bags/">Maps & Rosbags</a>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Module 4: Machine Learning</span>
+    <ul class="subnav">
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">HOG SVM</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#warning">Warning</a></li>
+    
+
+    <li class="toctree-l4"><a href="#histogram-of-oriented-gradients-hog">Histogram of Oriented Gradients (HOG)</a></li>
+    
+
+    <li class="toctree-l4"><a href="#support-vector-machines-svm">Support Vector Machines (SVM)</a></li>
+    
+
+    <li class="toctree-l4"><a href="#hog-svm-interaction">HOG-SVM Interaction</a></li>
+    
+
+    <li class="toctree-l4"><a href="#directory-setup">Directory Setup</a></li>
+    
+
+    <li class="toctree-l4"><a href="#how-to-use">How to Use</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#collecting-data">Collecting data</a></li>
+        
+            <li><a class="toctree-l5" href="#choosing-ml-parameters">Choosing ML parameters</a></li>
+        
+            <li><a class="toctree-l5" href="#training-data">Training data</a></li>
+        
+            <li><a class="toctree-l5" href="#does-the-detector-work">Does the detector work?</a></li>
+        
+            <li><a class="toctree-l5" href="#using-the-detector">Using the detector</a></li>
+        
+            <li><a class="toctree-l5" href="#multi-object-detection">Multi-object detection</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cheatsheets</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/python/">Python</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/opencv/">OpenCV</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/ros/">ROS Terminal Commands</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../cheatsheets/ros-topics-msgs/">ROS Topics and Messages</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Setup</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Hardware</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/hardware/build/">Build</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/hardware/router/">Router</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Software</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/software/jetson/">Jetson Config</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../setup/software/native_ros_install/native_ros_install_ref/">Native ROS Install</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">References</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../references/ros/ros_ref/">ROS</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/cartographer/cartographer_ref/">Cartographer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/localization/localization_ref/">Localization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/lidar/">Lidar</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/zed/">ZED</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/speakers/sound/">Speakers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/rosbag/rosbag_ref/">Rosbags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/docker/docker_ref/">Docker</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../references/collab/collab_ref/">Collaboration</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Resources</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../resources/faq/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../resources/contributors/">Contributors</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../..">BWSI RACECAR</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Module 4: Machine Learning &raquo;</li>
+        
+      
+        
+          <li>Curriculum &raquo;</li>
+        
+      
+    
+    <li>HOG SVM</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="warning">Warning</h1>
+<p>Be sure to FIRST focus on the practice racetracks set up (if this is done during Week 4, before the Grand Final). Solely machine learning based object detection will NOT get a team through to the end. Ensure your team has a conceptual and practical plan of attack for the final course, and a backup implementation of the sign detection (we know most of you will try to detect signs with this model). </p>
+<h1 id="histogram-of-oriented-gradients-hog">Histogram of Oriented Gradients (HOG)</h1>
+<p>If interested in the entire background of the algorithm, the <a href="http://lear.inrialpes.fr/people/triggs/pubs/Dalal-cvpr05.pdf">paper is here</a>.</p>
+<p>This algorithm extracts key features from an image or set of images. These images are generally pre-processed to normalize lighting and shadows. It then finds features based on the most extreme gradient changes between pixels, which are then grouped into cells for an aggregate weight and direction. Intuitively, these features are strongest around the edges of objects and pixel intensity changes.</p>
+<p>An example <strong>HOG descriptor</strong>:</p>
+<p><strong>The original sign</strong></p>
+<p><img alt="sign" src="../img/oneway.png" /> </p>
+<p><strong>The computed descriptor</strong></p>
+<p><img alt="descrip" src="../img/descrip.png" /></p>
+<h1 id="support-vector-machines-svm">Support Vector Machines (SVM)</h1>
+<p>This is a <strong>supervised machine learning</strong> method, depending on labeled training data. Based on the provided data, an SVM tries to find an optimal hyperplane (based on user parameters) to separate data points into unique classes. Optimal, in this case, is defined by separating clusters of data while maximizing the distance from those points - known as maximizing the <code>margin</code> of the training data. The hyperplane is built in N-dimensional space, and our model will be staged in 2-D or 3-D space, depending on parameters.</p>
+<p>A classic <strong>linear</strong> SVM:</p>
+<p><img alt="linSVM" src="../img/linear.jpg" /></p>
+<p>A <strong>nonlinear separable</strong> SVM, when taken to a higher dimension:</p>
+<p><img alt="nonLinSVM" src="../img/nonlinear.png" /></p>
+<h1 id="hog-svm-interaction">HOG-SVM Interaction</h1>
+<p>The data points are feature vectors in our case. The feature vectors built by the HOG are fed into the SVM, where they are separated into classes of feature vectors.</p>
+<p><strong><em>More to come.</em></strong></p>
+<h1 id="directory-setup">Directory Setup</h1>
+<p>Download this zip file <a href="https://drive.google.com/drive/folders/1nYBKs9f-GPLYbjyUQ_5N842WaqQleNei?usp=sharing">here on Google Drive</a> onto your computer.</p>
+<p>After a full setup, your folder directory should look like this:</p>
+<pre><code class="bash">| - hog-svm
+    |-TrainHOG.cpp
+    |-detector.py
+    |-batchRename.py
+    |-feedSaver.py
+    |-howToBuild.txt
+    |-makefile
+    |-positiveTrainingImages
+        |-[your images]
+    |-negativeTrainingImages
+        |-[your images]
+    |-processedPosTrainingImages
+        |-[cropped and renamed posImages]
+    |-processedNegTrainingImages
+        |-[cropped and renamed negImages]  
+</code></pre>
+
+<p>You must make the <strong>positiveTrainingImages</strong> / <strong>negativeTrainingImages</strong> directories yourself.</p>
+<h1 id="how-to-use">How to Use</h1>
+<h3 id="collecting-data">Collecting data</h3>
+<p>We recommend having at least 100 postives images of your object (for example, a Right Way Sign), and at least 100 negative images. A good rule is to always have at least as many negative images as positive images.</p>
+<ul>
+<li>
+<p><strong>Positive images</strong> : Consists of your object of interest as the center of attention. 
+                    Crop and adjust the images to focus on your object, where the image essentially acts as a Region of Interest (ROI) in which the HOG algorithm will build a feature vector from. Be careful of the object's degree of rotation. HOG works when descriptors have the same "ratio". For example, a right way sign may have a 3:1 ratio of length to width, but when greatly rotated about the y-axis, the area the sign appears in what would be a square, 1:1.</p>
+</li>
+<li>
+<p><strong>Negative images</strong> : Images that do not contain your object of interest. 
+                    A rule of thumb is to not choose purely random pictures as negatives, but images that represent backgrounds/environments in which the model will or may be used in.</p>
+</li>
+</ul>
+<p>Provided are two simple helper Python scripts for image preprocessing (commands to run are found near the top of the files):</p>
+<ul>
+<li>
+<p><strong>batchRename.py</strong> : Copies, then renames and resizes all images within a given directory, saving these new images in a separate directory.</p>
+</li>
+<li>
+<p><strong>feedSaver.py</strong> : Using a camera feed, it saves a specified number of frames from the feed as images, within a specified directory. 
+                    Use the letter <code>e</code> key to start saving frames from the feed, and <code>ESC</code> to quit the stream.
+                    By default saves the images as .png, but can be changed to other image formats (ex. <strong>.jpg</strong>).</p>
+</li>
+</ul>
+<h3 id="choosing-ml-parameters">Choosing ML parameters</h3>
+<p>For both the Histogram of Oriented Gradients (HOG) and Support Vector Machine (SVM), there are several parameters to be chosen to optimize your integrated model.</p>
+<p>For HOG (line 131, parameter in <code>hog.compute()</code>, in <strong>TrainHOG.cpp</strong>):</p>
+<pre><code class="text">    winstride : Window stride, a tuple of two values, determines the step size of the sliding window. 
+                Intuitively, a sliding window is a rectangular region of interest (of set length and width) that moves across an image (akin to a convolutional neural network). T
+                The window grabs feature vectors, passes them to our SVM model for classification. 
+
+    padding   : A tuple of two values. Determines how many pixels are added to the Region of Interest (ROI) BEFORE feature extraction. 
+                Can increase detector accuracy, but if the value is too large, will cause a performance hit.
+</code></pre>
+
+<p>Full documentation is <a href="https://docs.opencv.org/3.0-beta/modules/ml/doc/support_vector_machines.html">here</a>.
+More info on SVM types <a href="http://www.statsoft.com/textbook/support-vector-machines">here</a>, useful for the <code>SVM-Type</code> parameter.
+For SVM - main parameters (starting line 387, parameter in <code>SVM()</code>, in <strong>TrainHOG.cpp</strong>):</p>
+<pre><code class="text">    gamma       : Manipulates the data in 3-D space, making it easier to separate the data non-linearly, at the cost of data distortion as gamma grows.
+
+    kernel Type : Determines the Kernel function used for separating classes. The key methods are linear vs. nonlinear seperation, depending on the datasets.   
+
+    C           : Determines the degree of leninence for misclassification of classes in the model. The higher the C value, the more the model will try to not misclassify the HOG feature vectors.                  
+
+    SVM Type    : Determines whether the SVM focuses on classification error minimization vs. regression error minimization.  
+</code></pre>
+
+<p><img alt="C" src="../img/C_param.png" /></p>
+<p>Full documentation <a href="https://docs.opencv.org/master/d5/d33/structcv_1_1HOGDescriptor.html#a9c7a0b2aa72cf39b4b32b3eddea78203">here</a>
+For model detection (line 113, parameter in <code>HOGDescriptor.detectMultiscale()</code>, in <strong>detector.py</strong>):</p>
+<pre><code class="text">    winstride      : See above for basic description. For real-time detection, this HEAVILY affects performance. 
+                     Small strides such as (2,2) will be much slower than (4,4), as more windows to evaluate become computationally expensive. 
+                     We recommend starting at (4,4) or (8,8) and adjusting for speed vs. accuracy.
+
+    padding        : See above.
+
+    scale          : Determines the number of layers within the image pyramid. 
+                     An image pyramid represents the downsamples of the original image into smaller resultants, and detection is done at each level. 
+                     This HEAVILY impacts the speed of the detector. The smaller the value of scale, the more layers are added to the image pyramid - increasing computation time.
+
+    finalThreshold : This sets a lower bound for detection rectangle clusters. 
+                     A cluster of rectangles must have ONE more rectangle than the number set by finalThreshold to be drawn. 
+                     For example, if finalThreshold = 1, then clusters of at least 2 rectangles are drawn.
+</code></pre>
+
+<h3 id="training-data">Training data</h3>
+<p>Once there is a positive and negative dataset formatted, we can compile our model via the single C++ file - TrainHOG.cpp.
+Compilation is more complicated Windows, requiring separate software from Microsoft called <code>MSVC</code> (an IDE). We recommend group members with Mac OS X and Native Linux machines to compile the C++ code. Check if the machines have <code>g++</code> installed, though most machines have it by default.</p>
+<h4 id="mac-os-and-linux">MAC OS and Linux</h4>
+<p>If <code>g++</code> is not installed:</p>
+<pre><code>$ sudo apt-get update
+
+then
+
+$ sudo apt install g++
+</code></pre>
+<h4 id="windows">Windows</h4>
+<p>For training on Windows (if no members use Mac OS or Linux):</p>
+<ol>
+<li>
+<p><code>scp</code> your <strong>hog-svm</strong> folder over to the racecar.</p>
+</li>
+<li>
+<p><code>ssh</code> into the racecar (we compile on the car as it has <code>g++</code>). </p>
+</li>
+<li>
+<p>Follow the instructions below (starting with <code>make</code>), and if a <strong>Gtk-WARNING </strong>: cannot open display**** error appears:</p>
+<ul>
+<li>
+<p>Download the <strong>windows</strong> folder from the Google Drive link provided above.</p>
+</li>
+<li>
+<p><strong>windows</strong> contains one file</p>
+<ul>
+<li><strong>TrainHOGWin.cpp</strong></li>
+</ul>
+</li>
+<li>
+<p>Delete the current <strong>TrainHOG.cpp</strong>, replace it with <strong>TrainHOGWin.cpp</strong>, then rename it to <strong>TrainHOG.cpp</strong>. </p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Alternatively:</p>
+<ol>
+<li>Connect a monitor to the racecar, and train natively with the instructions below.</li>
+</ol>
+<h4 id="all-operating-systems">All Operating Systems</h4>
+<p>We have provided a <strong>makefile</strong> to simplify the commands for object file linking and executable construction, so to use the C++ code, in your terminal:</p>
+<pre><code class="bash">    1. Type `make` in the directory containing the `makefile`.
+
+    2. Type `./TrainHOG` to see what flags are available and how to run your executable. The `./` is how C++ executable files are run.
+       An example of a command would be 
+
+            $ ./TrainHOG -dw=160 -dh=80 -pd=./posImages -nd=./negImages -fn=&quot;TrafficDet160x80.xml&quot; -v True
+
+    3. The output file will be your model, in XML format. This will be loaded into `detector.py` for use with Python.
+</code></pre>
+
+<h3 id="does-the-detector-work">Does the detector work?</h3>
+<p>If testing on personal machines first, there is sanity check for whether the model is trained correctly. When the detector cannot find the object, the feed will be slow and have noticeable lag. The moment the object is detected, the feed becomes much smoother and FPS improves.</p>
+<h3 id="using-the-detector">Using the detector</h3>
+<p>This final component requires a student implementation of a <strong>non-maximum suppression algorithm</strong> (NMS). </p>
+<ul>
+<li>If you were to run the detector with all bounding boxes drawn, the screen would be filled with boxes (to see: in <strong>detector.py</strong>, draw rectangles immediately after <code>detector.detectMultiscale()</code>. By literal definition, the algorithm seeks to "suppress" all false positive bounding boxes. We want to draw a final bounding box on areas with the most <code>hits</code>, where multiple bounding boxes overlap.</li>
+</ul>
+<p><img alt="nms" src="../img/non-max-suppression.png" /></p>
+<p>Provided in <strong>detector.py</strong> are two implementations, almost usable but not quite.</p>
+<ol>
+<li>
+<p>The first one is coordinate and area based (<code>point_non_max_suppression()</code>). Since <code>HOGDescriptor.detectMultiscale()</code> returns both bounding boxes and detection scores (<code>weights</code>) for those boxes, we can alter the function to take weights into account, at higher precedence than area. We recommend printing out the <code>weights</code> variable to discern score differences between boxes that detect the object, and those that do not. </p>
+</li>
+<li>
+<p>The second is OpenCV's Deep Neural Network implementation of NMS. The key area of focus is how the <code>weights</code> from our model relate to the <strong>score_threshold</strong> and <strong>nms_threshold</strong>. This function, <code>cv2.dnn.NMSBoxes()</code>, is generally used with convolutional neural network models (CNNs) such as <strong>YOLO</strong>. The threshold parameters of this function only draw boxes that are above in value. Full documentation <a href="https://docs.opencv.org/master/d6/d0f/group__dnn.html">here</a>.</p>
+</li>
+</ol>
+<h3 id="multi-object-detection">Multi-object detection</h3>
+<p>There are two options (Labels for objects can be returned via dictionary keyed to each detector):</p>
+<ol>
+<li>
+<p>Run two <code>HOGDescriptor()</code> objects, each one with a different XML model. Computationally expensive, but with detection parameter adjustment and CUDA GPU acceleration (already implemented), resultant speed should suffice for max two objects.</p>
+</li>
+<li>
+<p>(Not Recommended within scope) Alter the C++ code. Train a <code>HOGDescriptor()</code> for each object. Push each <code>HOGDescriptor()</code> into a <code>Mat</code> (n-dimensional array), and push a corresponding label for each <code>HOGDescriptor()</code> into a separate <code>Mat</code>. The <code>labels</code> Mat is already created, and each label should be an <code>int</code> ID. Train a multiclass <code>SVM()</code> on these two <code>Mat</code> arrays.</p>
+</li>
+</ol>
+<p>Depending on student progress, we <strong>MAY</strong> release a fully functioning model and the correct NMS algorithm.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../../cheatsheets/python/" class="btn btn-neutral float-right" title="Python">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../../mod3/02_maps_bags/maps_bags/" class="btn btn-neutral" title="Maps & Rosbags"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../../mod3/02_maps_bags/maps_bags/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../../../cheatsheets/python/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+
+</body>
+</html>

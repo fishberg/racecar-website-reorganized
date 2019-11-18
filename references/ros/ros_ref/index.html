@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>ROS - BWSI RACECAR</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ROS";
+    var mkdocs_page_input_path = "references/ros/ros_ref.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> BWSI RACECAR</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Introduction</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../intro/overview/">Course Overview</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Curriculum</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Module 0: Getting Started</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod0/01_hardware_intro/hardware_intro/">Using the Hardware</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod0/02_ros_intro/ros_intro/">Intro to Terminal & ROS</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 1: Basic Control</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod1/01_proportional_controller/proportional_controller/">Proportional Control</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod1/02_wall_follower/wall_follower/">Wall Follower</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod1/03_safety_controller/safety_controller/">Safety Controller</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod1/04_potential_fields/potential_fields/">Potential Fields Controller</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 2: Computer Vision</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod2/01_segmentation/segmentation/">Color Segmentation</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod2/02_line_follow/line_follow/">Line Following</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod2/03_feature_detect/feature_detect/">Feature Detection</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 3: Detecting Environments</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod3/01_ar_sounds/ar_sounds/">AR Tags & Sounds</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod3/02_maps_bags/maps_bags/">Maps & Rosbags</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Module 4: Machine Learning</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../curriculum/mod4/01_hog_svm/hog_svm_lab/">HOG SVM</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cheatsheets</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../cheatsheets/python/">Python</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../cheatsheets/opencv/">OpenCV</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../cheatsheets/ros/">ROS Terminal Commands</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../cheatsheets/ros-topics-msgs/">ROS Topics and Messages</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Setup</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Hardware</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../setup/hardware/build/">Build</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../setup/hardware/router/">Router</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Software</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../setup/software/jetson/">Jetson Config</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../setup/software/native_ros_install/native_ros_install_ref/">Native ROS Install</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">References</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">ROS</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#robot-operating-system-ros-rospy">Robot Operating System (ROS) &amp; rospy</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#nodes">Nodes</a></li>
+        
+            <li><a class="toctree-l4" href="#topics-messages">Topics &amp; Messages</a></li>
+        
+            <li><a class="toctree-l4" href="#publishers-subscribers">Publishers &amp; Subscribers</a></li>
+        
+            <li><a class="toctree-l4" href="#summaries-and-related-material">Summaries and Related Material</a></li>
+        
+            <li><a class="toctree-l4" href="#the-details-of-connecting-and-running-nodes">The Details of Connecting and Running Nodes</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../cartographer/cartographer_ref/">Cartographer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../localization/localization_ref/">Localization</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lidar/">Lidar</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../zed/">ZED</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../speakers/sound/">Speakers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../rosbag/rosbag_ref/">Rosbags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../docker/docker_ref/">Docker</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../collab/collab_ref/">Collaboration</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Resources</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../resources/faq/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../resources/contributors/">Contributors</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">BWSI RACECAR</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>References &raquo;</li>
+        
+      
+    
+    <li>ROS</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="robot-operating-system-ros-rospy">Robot Operating System (ROS) &amp; rospy</h1>
+<p><hr></hr></p>
+<h2 id="nodes">Nodes</h2>
+<p><em>Where do we give the robot its behavior?</em></p>
+<p><img alt="" src="../img/example-node-small.jpg" /></p>
+<ul>
+<li><strong>A node is a <a href=# data-toggle="tooltip" title="by default in C++ or with rospy, in Python">program</a> that runs on the robot.</strong></li>
+<li>ROS can run multiple nodes at the same time.<br>
+<font color=#A0A0A0 size="2">For example, we give the racecars different nodes for their camera, LIDAR, and driving.</font></li>
+<li>The nodes can pass <span class="container"> <a href="#" data-toggle="tooltip" title="a node expressed in C++ and a node expressed in Python can send/receive messages between each other">standardized</a> </span>messages between each other.<br>
+<font color=#A0A0A0 size="2"> For example, the driving nodes receive messages from the LIDAR and camera nodes. </font></li>
+<li>Punchline: this allows us to split up the robot's code into logical chunks (instead of having <a href=https://github.mit.edu/2019-BWSI/Writeups/blob/master/ROS/clonkerStateMachine.py title="some of your TA’s old state machine">one clonky program</a>)!  <ul>
+<li>This is the bee's knees for debugging, since one node can fail without causing others to crash.</li>
+<li>If we switch out a piece of hardware <font color=#A0A0A0>(e.g. if we change the type of LIDAR sensor)</font>, we can just switch out the relevant chunks of software without scrounging through a huge program.</li>
+</ul>
+</li>
+</ul>
+<p><hr></hr></p>
+<h2 id="topics-messages">Topics &amp; Messages</h2>
+<p><em>What carries data between nodes?</em></p>
+<h3 id="messages">Messages</h3>
+<p><img alt="" src="../img/xp-file-packet-small.gif" /></p>
+<ul>
+<li><strong>A message is a packet of data.</strong></li>
+<li><font color=#00A0F0>To import the message's <a href="#" data-toggle="tooltip" title="You may know of datatypes like String and int, but a class can also work as a custom data type.">datatype</a>:</font></li>
+</ul>
+<pre><code class="python">from my_source_file import my_msg_class
+</code></pre>
+
+<ul>
+<li><font color=#00A0F0>To create a new message:</font></li>
+</ul>
+<pre><code class="python">my_msg = my_msg_class()
+</code></pre>
+
+<p>This creates an instance of the <code>my_msg_class</code> class.</p>
+<h3 id="topics">Topics</h3>
+<p><img alt="" src="../img/example-topic-small.jpg" /></p>
+<ul>
+<li><strong>A topic is a communication channel that carries messages between nodes.</strong> <br>
+<font color=#A0A0A0 size="2"> For example, the LIDAR node sends its <code>LaserScan</code> messages to the <code>/scan</code> topic.</font></li>
+<li>Each topic can only carry messages of one datatype.</li>
+<li>Multiple nodes can publish to and/or subscribe to one topic.</li>
+</ul>
+<p><em><a href="http://bwsi-racecar.com/cheatsheets/ros-topics-msgs/">Here</a> is our cheatsheet for topics and message types you will likely use.</em></p>
+<p><hr></hr></p>
+<h2 id="publishers-subscribers">Publishers &amp; Subscribers</h2>
+<p><em>How exactly do nodes send/receive messages from topics?</em></p>
+<h3 id="publishers">Publishers</h3>
+<ul>
+<li><strong>A publisher is a part of a node that can send messages to a topic.</strong></li>
+<li><font color=#00A0F0>To initialize a publisher</font></li>
+</ul>
+<pre><code class="python">my_publisher = rospy.Publisher(my_topic, my_topics_datatype, queue_size=1)
+</code></pre>
+
+<p>where <a href="#" data-toggle="tooltip" title="it refers to how many messages the topic will hold if the topic's subscriber(s) is/are is not receiving the messages as fast as they are published"><code>queue_size</code></a> will be given to you (when in doubt, make it 1).
+* <font color=#00A0F0> To send a message</font></p>
+<pre><code class="python">self.my_publisher.publish(my_msg)
+</code></pre>
+
+<h3 id="subscribers"> Subscribers </h3>
+
+<ul>
+<li><strong>A subscriber is a part of a node that can receive messages from a topic.</strong></li>
+<li><font color=#00A0F0> To initialize a subscriber:</font></li>
+</ul>
+<pre><code class="python">my_subscriber = rospy.Subscriber(my_topic, my_topics_datatype, my_callback_func)
+</code></pre>
+
+<p>where <code>my_callback_func</code> is a callback function.</p>
+<ul>
+<li>The callback function's job is to process the received messages. Whenever the subscriber receives a message, it automatically calls the callback function and passes it the message.</li>
+<li><font color=#00A0F0> A callback function: </font></li>
+</ul>
+<pre><code class="python">def my_callback_func (a_msg_from_my_topic):
+  print(a_msg_from_my_topic)
+</code></pre>
+
+<p><hr></hr></p>
+<h2 id="summaries-and-related-material">Summaries and Related Material</h2>
+<p><img alt="" src="../img/ros-sample-graph-small.jpg" /></p>
+<p><em>A mock example graph showing how a set of nodes might connect</em></p>
+<p><img alt="" src="../img/rosgraph-grand-operating-small.svg" /></p>
+<p><em>A graph showing how an actual racecar’s nodes connect</em></p>
+<p>Command line tricks: see details on our <a href="http://bwsi-racecar.com/cheatsheets/ros/"> ROS Cheatsheet </a>. Some notable commands include:</p>
+<ul>
+<li>To see the connection diagram of nodes and topics, try <code>rqt_graph</code>.</li>
+<li>To list all the currently running nodes, try <code>rosnode list</code>.</li>
+<li>To list all the topics, try <code>rostopic list</code>.</li>
+</ul>
+<p><hr></hr></p>
+<h2 id="the-details-of-connecting-and-running-nodes">The Details of Connecting and Running Nodes</h2>
+<p><em>NOTE: You will not need to know this program your cars (no really; the TA’s were not even aware of this when we first worked on the cars), but it is kinda cool.</em></p>
+<h3 id="connecting_nodes"> Connecting Nodes </h3>
+
+<p><em>The topics connect the nodes… But who builds the topics?</em></p>
+<p><img alt="" src="../img/switchboard-operator-small.jpg" /></p>
+<ul>
+<li>
+<p>Hiding under the hood is <code>roscore</code>.</p>
+</li>
+<li>
+<p>First <code>roscore</code> goes through all the nodes and looks for publishers. If it finds a publisher, it records what node it’s in and what topic it publishes to.  </p>
+</li>
+<li>Then <code>roscore</code> goes through all the nodes and looks for subscribers. When it finds a subscriber, it checks to see if the subscriber’s topic is in its list of publisher’s topics. If there are publishers that publish to that topic, <code>roscore</code> will <a href="#" data-toggle="tooltip" title= "your TA’s actually have no idea what this means computer-wise; we’re just going off of a ROS book we read"> form a direct connection </a> between the publisher(s) and the subscriber.</li>
+</ul>
+<p><img alt="" src="../img/roscore-graph-small.png" /></p>
+<p><font color=#A0A0A0><em>Taken  with modification by Avalon Vinella from "Programming Robots with ROS" published by O'Reilly Media</em></font></p>
+<ul>
+<li>Since <code>roscore</code> forms direct connections between publishers and subscribers, it’s more like a telephone operator (which just connects lines/topics) than a post office (which intercepts all messages and sorts them back out).</li>
+<li>When do we actually run <code>roscore</code>? See the last section.</li>
+</ul>
+<h3 id="running-nodes">Running Nodes</h3>
+<ul>
+<li>Thanks to the magic of rospy, all it takes to create a node is to run a python file containing </li>
+</ul>
+<pre><code class="python">rospy.init_node(&quot;my_node&quot;)
+</code></pre>
+
+<h3 id="running-nodes-in-packages">Running Nodes in Packages</h3>
+<ul>
+<li>
+<p>Sometimes it is inconvenient to run <code>roscore</code> all your nodes one by one. For convenience then, you can run <code>roscore</code> and a whole bunch of nodes automatically with <code>teleop</code> or <code>startZED</code>; these are simplifications we've made using the car's <a href="https://github.mit.edu/2019-BWSI/Writeups/tree/master/Bootup%20Bash%20Scripts">.bashrc file</a></p>
+<ul>
+<li>(For reference, a bash file contains a set of terminal commands. The .bashrc file in particular automatically runs whenever you open a new terminal. In our case, the robot's main .bashrc file  <a href="#" data-toggle="tooltip" title= "in 3rd from last line in .bashrc, there’s the command: source /home/racecar/.racecars"> runs another bash file called .racecars </a>)  In .racecars, we have written:</li>
+</ul>
+</li>
+</ul>
+<pre><code class="bash">   ...
+   # Create aliases to avoid having to type out ros packages and launch files
+   alias teleop=&quot;roslaunch racecar teleop.launch&quot;
+   alias startZED=&quot;roslaunch zed_wrapper zed.launch&quot;
+   ...
+</code></pre>
+
+<ul>
+<li>This makes running <code>teleop</code> equivalent to running <code>roslaunch racecar teleop.launch</code> in the car's terminal.</li>
+<li><code>roslaunch</code> is the actual command we are using. It can run nodes or other files in the package its given, and if <code>roscore</code> is not already running, it runs <code>roscore</code>.</li>
+<li><code>racecar</code> and <code>zed_wrapper</code> are  ROS packages, a collection of files that can include nodes, launch files, or any other relevant files.</li>
+<li><code>teleop.launch</code> and <code>zed.launch</code> are the launch files which tell <code>roslaunch</code> how to use the files in their respective packages.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../cartographer/cartographer_ref/" class="btn btn-neutral float-right" title="Cartographer">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../../setup/software/native_ros_install/native_ros_install_ref/" class="btn btn-neutral" title="Native ROS Install"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../../setup/software/native_ros_install/native_ros_install_ref/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../cartographer/cartographer_ref/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>
