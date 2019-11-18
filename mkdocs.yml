@@ -1,0 +1,49 @@
+site_name: BWSI RACECAR
+nav:
+    - Home: index.md
+    - Introduction:
+        - "Course Overview": intro/overview.md
+    - Curriculum:
+        - "Module 0: Getting Started":
+            - "Using the Hardware": curriculum/mod0/01_hardware_intro/hardware_intro.md
+            - "Intro to Terminal & ROS": curriculum/mod0/02_ros_intro/ros_intro.md
+        - "Module 1: Basic Control":
+            - "Proportional Control": curriculum/mod1/01_proportional_controller/proportional_controller.md
+            - "Wall Follower": curriculum/mod1/02_wall_follower/wall_follower.md
+            - "Safety Controller": curriculum/mod1/03_safety_controller/safety_controller.md
+            - "Potential Fields Controller": curriculum/mod1/04_potential_fields/potential_fields.md
+        - "Module 2: Computer Vision":
+            - "Color Segmentation": curriculum/mod2/01_segmentation/segmentation.md
+            - "Line Following": curriculum/mod2/02_line_follow/line_follow.md
+            - "Feature Detection": curriculum/mod2/03_feature_detect/feature_detect.md
+        - "Module 3: Detecting Environments":
+            - "AR Tags & Sounds": curriculum/mod3/01_ar_sounds/ar_sounds.md
+            - "Maps & Rosbags": curriculum/mod3/02_maps_bags/maps_bags.md
+        - "Module 4: Machine Learning":
+            - "HOG SVM": curriculum/mod4/01_hog_svm/hog_svm_lab.md
+    - Cheatsheets:
+        - Python: cheatsheets/python.md
+        - OpenCV: cheatsheets/opencv.md
+        - ROS Terminal Commands: cheatsheets/ros.md
+        - ROS Topics and Messages: cheatsheets/ros-topics-msgs.md
+    - Setup:
+        - Hardware:
+            - Build: setup/hardware/build.md
+            - Router: setup/hardware/router.md
+        - Software:
+            - "Jetson Config": setup/software/jetson.md
+            - Native ROS Install: setup/software/native_ros_install/native_ros_install_ref.md
+    - References:
+        - ROS: references/ros/ros_ref.md
+        - Cartographer: references/cartographer/cartographer_ref.md
+        - Localization: references/localization/localization_ref.md
+        - Lidar: references/lidar.md
+        - ZED: references/zed.md
+        - Speakers: references/speakers/sound.md
+        - Rosbags: references/rosbag/rosbag_ref.md
+        - Docker: references/docker/docker_ref.md
+        - Collaboration: references/collab/collab_ref.md
+    - Resources:
+        - FAQ: resources/faq.md
+        - Contributors: resources/contributors.md
+theme: readthedocs
